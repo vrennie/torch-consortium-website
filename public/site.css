@@ -3,3 +3,10 @@
 @media(max-width:1080px){.head{flex-direction:column;align-items:flex-start;padding:18px 0;gap:13px}.hero-grid{gap:26px}.orb>span{font-size:95px}}
 @media(max-width:760px){.head{min-height:0}nav{gap:13px}.hero-grid{grid-template-columns:1fr;min-height:0}.orb{height:290px;width:290px;margin:auto}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.split{grid-template-columns:1fr;gap:30px}.section,.dark{padding-top:52px;padding-bottom:52px}.banner{padding:42px 0}.dropdown{left:0}.section-top{align-items:flex-start;flex-direction:column}}
 @media(max-width:530px){.shell{width:min(100% - 30px,1170px)}.cards{grid-template-columns:1fr}.hero h1{font-size:2.55rem}.hero p{font-size:16px}.hero-grid{padding:50px 0}.metrics strong{font-size:43px}.foot{flex-direction:column}.prose{padding:23px}.dropdown{left:0;max-width:230px}}
+
+/* TORCH lung cursor: pointer hotspot is at the upper centre of the icon. */
+@media (hover: hover) and (pointer: fine) {
+  body, body * { cursor: url('../cursor-lungs.svg') 16 3, auto; }
+  a, button, summary, [role='button'], input[type='submit'], input[type='button'] { cursor: url('../cursor-lungs.svg') 16 3, pointer; }
+  input:not([type='submit']):not([type='button']), textarea, [contenteditable='true'] { cursor: text; }
+}

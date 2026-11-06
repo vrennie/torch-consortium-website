@@ -57,6 +57,7 @@ async function save(p,html){const path=join(output,p);await mkdir(dirname(path),
 await mkdir(join(output,'assets'),{recursive:true});
 await copyFile('public/site.css',join(output,'assets','site.css'));
 await copyFile('public/favicon.svg',join(output,'favicon.svg'));
+await copyFile('public/cursor-lungs.svg',join(output,'cursor-lungs.svg'));
 if(existsSync('public/assets/media'))await cp('public/assets/media',join(output,'assets','media'),{recursive:true});
 if(domain)await copyFile('CNAME',join(output,'CNAME'));
 await writeFile(join(output,'.nojekyll'),'');

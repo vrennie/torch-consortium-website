@@ -6,7 +6,7 @@
 
 /* TORCH lung cursor: pointer hotspot is at the upper centre of the icon. */
 @media (hover: hover) and (pointer: fine) {
-  body, body * { cursor: url('../cursor-lungs.svg') 16 3, auto; }
-  a, button, summary, [role='button'], input[type='submit'], input[type='button'] { cursor: url('../cursor-lungs.svg') 16 3, pointer; }
+  body, body * { cursor: url('../cursor-lungs.png') 16 3, auto; }
+  a, button, summary, [role='button'], input[type='submit'], input[type='button'] { cursor: url('../cursor-lungs.png') 16 3, pointer; }
   input:not([type='submit']):not([type='button']), textarea, [contenteditable='true'] { cursor: text; }
 }

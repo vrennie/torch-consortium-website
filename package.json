@@ -1,0 +1,14 @@
+{
+  "name": "torch-consortium-website",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "fetch-media": "node scripts/fetch-media.mjs",
+    "preview": "python3 -m http.server 8000 --directory dist"
+  },
+  "dependencies": {
+    "marked": "^15.0.12"
+  }
+}

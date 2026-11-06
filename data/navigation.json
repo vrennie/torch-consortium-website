@@ -1,0 +1,120 @@
+[
+  {
+    "label": "About us",
+    "href": "/about/",
+    "items": [
+      [
+        "What we do",
+        "/what-we-do/"
+      ],
+      [
+        "Vision",
+        "/focus-area/"
+      ],
+      [
+        "Focus area",
+        "/vision-1/"
+      ],
+      [
+        "Collaborations",
+        "/collaborations/"
+      ],
+      [
+        "Funding",
+        "/funding-1/"
+      ],
+      [
+        "Output",
+        "/output/"
+      ]
+    ]
+  },
+  {
+    "label": "People",
+    "href": "/people/"
+  },
+  {
+    "label": "Projects",
+    "href": "/projects/",
+    "items": [
+      [
+        "VLIR-UOS",
+        "/vliruos/"
+      ],
+      [
+        "EXIT-RIF",
+        "/exitrif/"
+      ],
+      [
+        "SMARTT trial",
+        "/smartt/"
+      ],
+      [
+        "MICK-MAGMA",
+        "/new-page-2/"
+      ],
+      [
+        "GenPath Africa / PARR-TB",
+        "/genpath-africa-parrtb/"
+      ]
+    ]
+  },
+  {
+    "label": "PARR-TB study",
+    "href": "/parrtb/",
+    "items": [
+      [
+        "Introduction",
+        "/parrtb-intro/"
+      ],
+      [
+        "Informed consent",
+        "/relevant-documents-copy/"
+      ],
+      [
+        "Account setup",
+        "/new-page/"
+      ],
+      [
+        "Tutorial",
+        "/treatment-guidance-tutorial/"
+      ],
+      [
+        "Troubleshooting",
+        "/faqs-copy-1/"
+      ],
+      [
+        "CRO details",
+        "/cro-contact-form/"
+      ],
+      [
+        "FAQs",
+        "/frequently-asked-questions/"
+      ],
+      [
+        "Contact form",
+        "/mickmagma-contact-form/"
+      ],
+      [
+        "Supporting documents",
+        "/relevant-documents/"
+      ]
+    ]
+  },
+  {
+    "label": "Vacancies",
+    "href": "/vacancies/"
+  },
+  {
+    "label": "News",
+    "href": "/news/"
+  },
+  {
+    "label": "Publications",
+    "href": "/publications/"
+  },
+  {
+    "label": "Contact",
+    "href": "/contact-us/"
+  }
+]

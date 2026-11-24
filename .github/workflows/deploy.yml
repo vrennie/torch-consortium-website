@@ -51,6 +51,10 @@ jobs:
           test "$(grep -o 'class="vision-priority"' dist/focus-area/index.html | wc -l)" -eq 5
           ! grep -q 'vision-mission-number' dist/focus-area/index.html
           grep -q 'vision-mission-icon-wrap' dist/assets/site.css
+          grep -q 'Additional peer-reviewed articles' dist/publications/index.html
+          grep -q '10.5588/ijtld.20.0886' dist/publications/index.html
+          grep -q '10.1016/j.meegid.2019.103948' dist/publications/index.html
+          grep -q 'content="0;url=/torch-consortium-website/publications/"' dist/output/index.html
           grep -q 'grid-template-columns:46px minmax(0,1fr)' dist/assets/site.css
           grep -q 'class="vision-priority-number"' dist/focus-area/index.html
           grep -q 'Frequently asked questions' dist/parrtb/index.html

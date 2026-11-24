@@ -185,7 +185,7 @@ for(const [slug,section,heading,sub] of [
   await save('projects/index.html',frame('Projects',banner('Projects','TORCH Consortium',sub)+'<div class="shell list-wrap">'+content+'</div>'));
   continue;
  }
- const list=inSection(section).filter(p=>slug!=='about'||p.slug!=='contact-us');
+ const list=inSection(section).filter(p=>slug!=='about'||(p.slug!=='contact-us'&&p.slug!=='funding-1'&&p.slug!=='output'));
  await save(slug+'/index.html',frame(heading,banner(heading,'TORCH Consortium',sub)+'<div class="shell list-wrap"><div class="cards">'+list.map(card).join('')+'</div></div>'));
 }
 const selected=JSON.parse(await readFile('data/projects.json','utf8')).current.map(x=>bySlug.get(x)).filter(Boolean);

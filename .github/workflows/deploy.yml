@@ -51,6 +51,8 @@ jobs:
           test "$(grep -o 'class="vision-priority"' dist/focus-area/index.html | wc -l)" -eq 5
           ! grep -q 'vision-mission-number' dist/focus-area/index.html
           grep -q 'vision-mission-icon-wrap' dist/assets/site.css
+          grep -q 'grid-template-columns:46px minmax(0,1fr)' dist/assets/site.css
+          grep -q 'class="vision-priority-number"' dist/focus-area/index.html
           grep -q 'Frequently asked questions' dist/parrtb/index.html
           grep -q 'class="parrtb-link-grid"' dist/parrtb/index.html
           if grep -q 'class="cover"' dist/parrtb/index.html; then

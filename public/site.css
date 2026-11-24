@@ -189,3 +189,8 @@
 .prose .funding-logo img[src$="find-logo.svg"]{width:min(85%,230px);max-height:92px}
 .prose .funding-logo img[src*="logowik.com"]{max-width:100%;max-height:115px}
 .prose .funding-logo img[src*="wikimedia.org"]{max-width:80%;max-height:112px}
+
+/* Funding logo fit: compact FWO, C-Path and TGen source artwork. */
+.prose .funding-logo img[src*="logo-fwo.svg"]{width:min(72%,210px);height:auto;max-height:104px;object-fit:contain}
+.prose .funding-logo img[src*="CRITICAL_PATH_INSTITUTE__Logo.jpg"]{width:min(100%,265px);height:auto;max-height:105px;object-fit:contain}
+.prose .funding-logo img[src*="GetLogoFileById"]{width:min(100%,240px);height:auto;max-height:115px;object-fit:contain}

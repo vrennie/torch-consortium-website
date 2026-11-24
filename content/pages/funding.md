@@ -8,7 +8,7 @@ draft: false
 
 <div class="funding-grid">
   <a class="funding-card" href="https://www.fwo.be/en/" target="_blank" rel="noopener noreferrer" aria-label="Visit FWO">
-    <div class="funding-logo"><img src="/assets/media/5574a3ef-FWO_Logo_Baseline_Lijn_Kleur.jpg" alt="Research Foundation Flanders (FWO) logo" loading="lazy"></div>
+    <div class="funding-logo"><img src="https://www.fwo.be/assets/images/logo-fwo.svg" alt="Research Foundation Flanders (FWO) logo" loading="lazy"></div>
     <h2>FWO Odysseus programme</h2>
   </a>
 
@@ -42,14 +42,14 @@ draft: false
     <p>King Abdullah University of Science and Technology. Support for whole-genome sequencing.</p>
   </a>
 
-  <a class="funding-card" href="https://c-path.org/" target="_blank" rel="noopener noreferrer" aria-label="Visit Critical Path Institute">
-    <div class="funding-logo funding-wordmark" aria-hidden="true"><span>C-Path</span></div>
+  <a class="funding-card" href="https://c-path.org/donate/" target="_blank" rel="noopener noreferrer" aria-label="Visit Critical Path Institute">
+    <div class="funding-logo"><img src="https://mma.prnewswire.com/media/2943035/CRITICAL_PATH_INSTITUTE__Logo.jpg" alt="Critical Path Institute logo" loading="lazy"></div>
     <h2>Critical Path Institute (C-Path)</h2>
     <p>Support for whole-genome sequencing.</p>
   </a>
 
   <a class="funding-card" href="https://www.tgen.org/" target="_blank" rel="noopener noreferrer" aria-label="Visit Translational Genomics Research Institute">
-    <div class="funding-logo funding-wordmark" aria-hidden="true"><span>TGen</span></div>
+    <div class="funding-logo"><img src="https://recruiting.paylocity.com/Recruiting/Jobs/GetLogoFileById?logoFileStoreId=43793165&amp;moduleId=8725" alt="TGen logo, part of City of Hope" loading="lazy"></div>
     <h2>Translational Genomics Research Institute (TGen)</h2>
     <p>Support for whole-genome sequencing.</p>
   </a>

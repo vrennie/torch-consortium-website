@@ -8,13 +8,7 @@ draft: false
 
 Welcome to the info page for Medical Officers responsible for treating DR-TB patients enrolled in the GenPath PARR-TB project. On this page you will find information regarding the different aspects of the study, such as WGS surveillance, precision medicine, precision prevention, and qualitative study components. If you have questions or concerns, please reach out to the [clinical research organisation (CRO)](/cro-contact-form). Please see the information pamphlet for a succinct overview:
 
-![](/assets/media/ab31933f-PARR-TB_MO_Brochure.png)
-
-![](/assets/media/db5d3d9f-PARR-TB_MO_Brochure2.png)
-
-![](/assets/media/511df6f0-PARR-TB_MO_Brochure3.png)
-
-![](/assets/media/f9a4e871-PARR-TB_MO_Brochure4.png)
+[[PARR_TB_BOOKLET]]
 
 The organisations involved in this study are:
 

@@ -47,7 +47,7 @@ function fix(html){
 }
 const navHtml=nav.map(n=>n.items?'<details><summary>'+escape(n.label)+'</summary><div class="dropdown">'+(n.label==='Projects'||n.label==='About us'?'':'<a href="'+link(n.href)+'">Overview</a>')+n.items.map(c=>'<a href="'+link(c[1])+'">'+escape(c[0])+'</a>').join('')+'</div></details>':'<a href="'+link(n.href)+'">'+escape(n.label)+'</a>').join('');
 function frame(title,body){
- return '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+escape(title)+' | TORCH Consortium</title><meta name="description" content="Tuberculosis Omics ResearCH (TORCH) consortium"><link rel="icon" href="'+link('torch-lungs-favicon.svg')+'"><link rel="stylesheet" href="'+link('assets/site.css')+'?v=collaborations-20261124'+'"></head><body><a class="skip" href="#main">Skip to content</a><header><div class="shell head"><a class="brand" href="'+link('')+'" aria-label="TORCH Consortium home"><img class="brand-logo" src="'+link('branding/torch-horizontal.svg')+'" alt="TORCH — Tuberculosis Omics ResearCH"></a><nav>'+navHtml+'</nav></div></header><main id="main">'+body+'</main><footer class="site-footer"><div class="shell fine">© '+new Date().getUTCFullYear()+' TORCH Consortium</div></footer>'+''+'</body></html>';
+ return '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+escape(title)+' | TORCH Consortium</title><meta name="description" content="Tuberculosis Omics ResearCH (TORCH) consortium"><link rel="icon" href="'+link('torch-lungs-favicon.svg')+'"><link rel="stylesheet" href="'+link('assets/site.css')+'?v=funding-cards-20261124'+'"></head><body><a class="skip" href="#main">Skip to content</a><header><div class="shell head"><a class="brand" href="'+link('')+'" aria-label="TORCH Consortium home"><img class="brand-logo" src="'+link('branding/torch-horizontal.svg')+'" alt="TORCH — Tuberculosis Omics ResearCH"></a><nav>'+navHtml+'</nav></div></header><main id="main">'+body+'</main><footer class="site-footer"><div class="shell fine">© '+new Date().getUTCFullYear()+' TORCH Consortium</div></footer>'+''+'</body></html>';
 }
 function banner(title,kicker,description=''){return '<section class="banner"><div class="shell"><div class="eyebrow">'+escape(kicker)+'</div><h1>'+escape(title)+'</h1>'+(description?'<p>'+escape(description)+'</p>':'')+'</div></section>'}
 function image(p){const x=p.content.match(/!\[[^\]]*\]\(([^)]+)\)/);return x?fix('<img src="'+escape(x[1])+'" alt="" loading="lazy">'):''}
@@ -112,6 +112,11 @@ if(domain)await copyFile('CNAME',join(output,'CNAME'));
 await writeFile(join(output,'.nojekyll'),'');
 for(const p of pages){
  if(p.draft)continue;
+ if(p.slug==='funding-1'){
+  const destination=link('funding/');
+  await save('funding-1/index.html','<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="refresh" content="0;url='+destination+'"><link rel="canonical" href="'+destination+'"><title>Funding | TORCH Consortium</title></head><body><p>This page has moved to <a href="'+destination+'">Funding</a>.</p></body></html>');
+  continue;
+ }
  if(p.slug==='output'){
   const destination=link('publications/');
   await save('output/index.html','<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="refresh" content="0;url='+destination+'"><link rel="canonical" href="'+destination+'"><title>Moved to Publications | TORCH Consortium</title></head><body><p>The Output page has moved to <a href="'+destination+'">Publications</a>.</p></body></html>');

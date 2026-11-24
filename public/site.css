@@ -164,3 +164,17 @@
 .prose .collaboration-full-name{font-size:.91rem;color:#666;margin:0;line-height:1.5}
 .prose .collaboration-partner>p:last-child{margin-bottom:0}
 @media(max-width:650px){.prose .collaboration-partner{padding:21px 20px;margin-top:26px}.prose .collaboration-partner h2{font-size:1.55rem}}
+
+/* Funding partners: logo-led, centered support acknowledgement cards. */
+.funding-introduction{max-width:900px;text-align:center;margin:0 auto 35px!important;color:#555;font-size:1.07rem;line-height:1.7}
+.funding-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.funding-card{min-width:0;padding:26px 23px 28px;border:1px solid #e1dfe0;border-radius:14px;background:#fff;text-align:center;display:flex;flex-direction:column;align-items:center}
+.funding-logo{height:125px;width:100%;display:flex;align-items:center;justify-content:center;margin-bottom:19px}
+.prose .funding-logo img{display:block;width:auto;max-width:100%;max-height:115px;margin:0;object-fit:contain;border-radius:0}
+.funding-wordmark{background:#faf5f7;border-radius:10px;color:var(--brand);padding:15px}
+.funding-wordmark>span{font:800 clamp(1.6rem,2.5vw,2.15rem)/1.2 Manrope,sans-serif;letter-spacing:-.035em}
+.funding-wordmark-amp{font-size:.75em}
+.prose .funding-card h2{font-size:1.12rem;line-height:1.4;margin:0 0 12px;letter-spacing:-.02em}
+.prose .funding-card p{font-size:.91rem;line-height:1.6;color:#666;margin:0}
+@media(max-width:950px){.funding-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.funding-grid{grid-template-columns:1fr}.funding-card{padding:24px}.funding-logo{height:115px}}

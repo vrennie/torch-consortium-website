@@ -44,6 +44,11 @@ jobs:
           test -s dist/assets/documents/PARR-TB-Medical-Officers-Pamphlet.pdf
           test -s dist/branding/torch-horizontal.svg
           test -s dist/branding/torch-square.svg
+          test -s dist/funding/index.html
+          test -s dist/funding-1/index.html
+          grep -q 'class="funding-grid"' dist/funding/index.html
+          test "$(grep -o 'class="funding-card"' dist/funding/index.html | wc -l)" -eq 9
+          grep -q 'funding/' dist/funding-1/index.html
           test -s dist/branding/mick-magma-logo.jpg
           # Verify the intended Vision & Mission page structure, not just build success.
           test "$(grep -o 'class="vision-mission-icon"' dist/focus-area/index.html | wc -l)" -eq 3

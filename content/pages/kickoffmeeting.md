@@ -1,5 +1,5 @@
 ---
-title: "Kick-off meeting"
+title: "SPUTSEQ"
 section: "Projects"
 draft: false
 ---

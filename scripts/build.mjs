@@ -69,10 +69,22 @@ function summary(p){
  if(!s || s.startsWith('No text was included'))return 'Project details coming soon.';
  return escape(s.length>125?s.slice(0,122).replace(/\s+\S*$/,'')+'…':s);
 }
+// PARR-TB resource thumbnail overrides are kept separate from page content.
+const parrtbImages={
+ 'cro-contact-form':'assets/media/aafdb5e6-stellenbosch_logo.jpg',
+ 'faqs-copy-1':'assets/media/b227473b-horizontal_logo_Oct_2024.jpg',
+ 'frequently-asked-questions':'branding/faq.svg',
+ 'mickmagma-contact-form':'assets/media/066f42ff-GPA_logo.png',
+ 'parrtb-intro':'assets/media/066f42ff-GPA_logo.png',
+ 'relevant-documents':'assets/media/066f42ff-GPA_logo.png',
+ 'treatment-guidance-tutorial':'assets/media/b227473b-horizontal_logo_Oct_2024.jpg'
+};
 function card(p){
  const project=p.section==='Projects';
- const visual=image(p)||(project?'<img src="'+link('branding/torch-horizontal.svg')+'" alt="TORCH Consortium logo" loading="lazy">':'<span>T.</span>');
- return '<a class="card'+(project?' project-card':'')+'" href="'+link(p.slug+'/')+'"><div class="cover">'+visual+'</div><div class="card-body"><h3>'+escape(p.title)+'</h3><p>'+summary(p)+'</p><b>Explore ↗</b></div></a>';
+ const resource=p.section==='PARR-TB';
+ const asset=resource?parrtbImages[p.slug]:null;
+ const visual=asset?'<img src="'+link(asset)+'" alt="" loading="lazy">':image(p)||(project?'<img src="'+link('branding/torch-horizontal.svg')+'" alt="TORCH Consortium logo" loading="lazy">':'<span>T.</span>');
+ return '<a class="card'+(project?' project-card':'')+(resource?' resource-card':'')+'" href="'+link(p.slug+'/')+'"><div class="cover">'+visual+'</div><div class="card-body"><h3>'+escape(p.title)+'</h3><p>'+summary(p)+'</p><b>Explore ↗</b></div></a>';
 }
 function renderBooklet(){
  const url=link('assets/documents/PARR-TB-Medical-Officers-Pamphlet.pdf');
@@ -92,6 +104,7 @@ await copyFile('public/torch-lungs-favicon.svg',join(output,'torch-lungs-favicon
 await mkdir(join(output,'branding'),{recursive:true});
 await copyFile('public/branding/torch-horizontal.svg',join(output,'branding','torch-horizontal.svg'));
 await copyFile('public/branding/torch-square.svg',join(output,'branding','torch-square.svg'));
+await copyFile('public/branding/faq.svg',join(output,'branding','faq.svg'));
 if(existsSync('public/assets/media'))await cp('public/assets/media',join(output,'assets','media'),{recursive:true});
 if(existsSync('public/assets/documents'))await cp('public/assets/documents',join(output,'assets','documents'),{recursive:true});
 if(domain)await copyFile('CNAME',join(output,'CNAME'));

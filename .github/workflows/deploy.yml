@@ -51,6 +51,10 @@ jobs:
           test -s dist/assets/media/find-logo-highres.svg
           grep -q 'assets/media/find-logo-highres.svg' dist/funding/index.html
           grep -q 'https://www.global-health-edctp3.europa.eu/index_en' dist/funding/index.html
+          grep -q 'European Research Council (ERC) Advanced Grant' dist/funding/index.html
+          grep -q 'Prof. Annelies Van Rie' dist/funding/index.html
+          grep -q 'DiSrupT RR-TB' dist/funding/index.html
+          grep -q 'LOGO_ERC-FLAG_EU.png' dist/funding/index.html
           if grep -q 'www.globalhealth-edctp3.eu' dist/funding/index.html; then echo "Old EDCTP URL still in page"; exit 1; fi
           test -s dist/assets/media/fwo-logo.svg
           test -s dist/assets/media/cdc-logo.svg
@@ -69,8 +73,8 @@ jobs:
           grep -q 'https://www.kaust.edu.sa/en/' dist/funding/index.html
           grep -q 'https://www.cdc.gov/index.html' dist/funding/index.html
           if grep -q 'ReSeqTB' dist/funding/index.html; then echo "ReSeqTB still present"; exit 1; fi
-          test "$(grep -o 'class="funding-card"' dist/funding/index.html | wc -l)" -eq 9
-          test "$(grep -o 'class="funding-card" href=' dist/funding/index.html | wc -l)" -eq 9
+          test "$(grep -o 'class="funding-card"' dist/funding/index.html | wc -l)" -eq 10
+          test "$(grep -o 'class="funding-card" href=' dist/funding/index.html | wc -l)" -eq 10
           test "$(grep -o 'class="funding-card"' dist/funding/index.html | wc -l)" -eq 9
           grep -q 'funding/' dist/funding-1/index.html
           test -s dist/branding/mick-magma-logo.jpg

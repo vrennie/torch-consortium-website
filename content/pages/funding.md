@@ -19,6 +19,12 @@ draft: false
     <p>Support under the EU's Horizon Europe Research and Innovation Programme and the Global Health EDCTP3 Joint Undertaking.</p>
   </a>
 
+  <a class="funding-card" href="https://erc.europa.eu/" target="_blank" rel="noopener noreferrer" aria-label="Visit the European Research Council">
+    <div class="funding-logo"><img src="https://erc.europa.eu/sites/default/files/2025-08/LOGO_ERC-FLAG_EU.png" alt="European Union and European Research Council funding logos" loading="lazy"></div>
+    <h2>European Research Council (ERC) Advanced Grant</h2>
+    <p>The ERC awarded an Advanced Grant to Prof. Annelies Van Rie for the DiSrupT RR-TB trial, which aims to reduce transmission of rifampicin-resistant tuberculosis through a suite of state-of-the-art interventions combining genomic sequencing, precision medicine and precision public health.</p>
+  </a>
+
   <a class="funding-card" href="https://www.samrc.ac.za/" target="_blank" rel="noopener noreferrer" aria-label="Visit the South African Medical Research Council">
     <div class="funding-logo"><img src="/assets/media/33e8ac10-samrc_gimp.png" alt="South African Medical Research Council logo" loading="lazy"></div>
     <h2>South African Medical Research Council</h2>

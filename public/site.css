@@ -205,3 +205,6 @@
 
 /* Cropped, high-resolution FIND logo traced from supplied artwork. */
 .prose .funding-logo img[src$="find-logo-highres.svg"]{width:min(95%,295px);max-height:110px;height:auto;object-fit:contain}
+
+/* ERC Horizon Europe funding acknowledgement: display EU and ERC identities together. */
+.prose .funding-logo img[src*="LOGO_ERC-FLAG_EU.png"]{display:block;width:min(100%,315px);height:auto;max-height:114px;object-fit:contain}

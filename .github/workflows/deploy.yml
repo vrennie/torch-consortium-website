@@ -48,6 +48,10 @@ jobs:
           test -s dist/funding-1/index.html
           grep -q 'class="funding-grid"' dist/funding/index.html
           test -s dist/assets/media/find-logo.svg
+          test -s dist/assets/media/find-logo-highres.svg
+          grep -q 'assets/media/find-logo-highres.svg' dist/funding/index.html
+          grep -q 'https://www.global-health-edctp3.europa.eu/index_en' dist/funding/index.html
+          if grep -q 'www.globalhealth-edctp3.eu' dist/funding/index.html; then echo "Old EDCTP URL still in page"; exit 1; fi
           test -s dist/assets/media/fwo-logo.svg
           test -s dist/assets/media/cdc-logo.svg
           test -s dist/assets/media/tgen-logo.webp

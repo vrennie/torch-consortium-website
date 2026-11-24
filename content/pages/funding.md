@@ -13,7 +13,7 @@ draft: false
     <p>The FWO Odysseus programme provided five years of start-up funding to establish the TORCH consortium and helped support the SMARTT clinical trial.</p>
   </a>
 
-  <a class="funding-card" href="https://www.globalhealth-edctp3.eu/" target="_blank" rel="noopener noreferrer" aria-label="Visit Global Health EDCTP3">
+  <a class="funding-card" href="https://www.global-health-edctp3.europa.eu/index_en" target="_blank" rel="noopener noreferrer" aria-label="Visit Global Health EDCTP3">
     <div class="funding-logo"><img src="/assets/media/24d66794-EDCTP3-and-EU-emblem.png" alt="Global Health EDCTP3 and European Union emblems" loading="lazy"></div>
     <h2>European Union and Global Health EDCTP3</h2>
     <p>Support under the EU's Horizon Europe Research and Innovation Programme and the Global Health EDCTP3 Joint Undertaking.</p>
@@ -56,7 +56,7 @@ draft: false
   </a>
 
   <a class="funding-card" href="https://www.finddx.org/" target="_blank" rel="noopener noreferrer" aria-label="Visit FIND">
-    <div class="funding-logo"><img src="/assets/media/find-logo.svg" alt="FIND logo" loading="lazy"></div>
+    <div class="funding-logo"><img src="/assets/media/find-logo-highres.svg" alt="FIND logo" loading="lazy"></div>
     <h2>FIND</h2>
     <p>Support for whole-genome sequencing.</p>
   </a>

@@ -202,3 +202,6 @@
 
 /* User-supplied TGen / City of Hope official logo: preserve proportions. */
 .prose .funding-logo img[src$="/tgen-logo.webp"]{display:block;width:min(100%,300px);max-height:112px;height:auto;object-fit:contain}
+
+/* Cropped, high-resolution FIND logo traced from supplied artwork. */
+.prose .funding-logo img[src$="find-logo-highres.svg"]{width:min(95%,295px);max-height:110px;height:auto;object-fit:contain}

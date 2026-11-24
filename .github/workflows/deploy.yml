@@ -50,10 +50,12 @@ jobs:
           test -s dist/assets/media/find-logo.svg
           test -s dist/assets/media/fwo-logo.svg
           test -s dist/assets/media/cdc-logo.svg
-          test -s dist/assets/media/tgen-logo.svg
+          test -s dist/assets/media/tgen-logo.webp
           grep -q 'assets/media/fwo-logo.svg' dist/funding/index.html
           grep -q 'assets/media/cdc-logo.svg' dist/funding/index.html
-          grep -q 'assets/media/tgen-logo.svg' dist/funding/index.html
+          grep -q 'assets/media/tgen-logo.webp' dist/funding/index.html
+          grep -q 'SMARTT clinical trial' dist/funding/index.html
+          if grep -q 'assets/media/tgen-logo.svg' dist/funding/index.html; then echo "Old logo still referenced"; exit 1; fi
           if grep -Eq 'GetLogoFileById|CDC_logo_2024.svg.png|logo-fwo.svg' dist/funding/index.html; then echo "Remote logo link not removed"; exit 1; fi
           grep -q 'https://www.finddx.org/' dist/funding/index.html
 

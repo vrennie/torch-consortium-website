@@ -10,6 +10,7 @@ draft: false
   <a class="funding-card" href="https://www.fwo.be/en/" target="_blank" rel="noopener noreferrer" aria-label="Visit FWO">
     <div class="funding-logo"><img src="/assets/media/fwo-logo.svg" alt="Research Foundation Flanders (FWO) logo" loading="lazy"></div>
     <h2>FWO Odysseus programme</h2>
+    <p>The FWO Odysseus programme provided five years of start-up funding to establish the TORCH consortium and helped support the SMARTT clinical trial.</p>
   </a>
 
   <a class="funding-card" href="https://www.globalhealth-edctp3.eu/" target="_blank" rel="noopener noreferrer" aria-label="Visit Global Health EDCTP3">
@@ -49,7 +50,7 @@ draft: false
   </a>
 
   <a class="funding-card" href="https://www.tgen.org/" target="_blank" rel="noopener noreferrer" aria-label="Visit Translational Genomics Research Institute">
-    <div class="funding-logo"><img src="/assets/media/tgen-logo.svg" alt="TGen logo, part of City of Hope" loading="lazy"></div>
+    <div class="funding-logo"><img src="/assets/media/tgen-logo.webp" alt="TGen logo, part of City of Hope" loading="lazy"></div>
     <h2>Translational Genomics Research Institute (TGen)</h2>
     <p>Support for whole-genome sequencing.</p>
   </a>

@@ -199,3 +199,6 @@
 .prose .funding-logo img[src$="/fwo-logo.svg"]{width:min(94%,265px);height:auto;max-height:111px;object-fit:contain}
 .prose .funding-logo img[src$="/cdc-logo.svg"]{width:min(80%,175px);height:auto;max-height:115px;object-fit:contain}
 .prose .funding-logo img[src$="/tgen-logo.svg"]{width:min(96%,260px);height:auto;max-height:110px;object-fit:contain}
+
+/* User-supplied TGen / City of Hope official logo: preserve proportions. */
+.prose .funding-logo img[src$="/tgen-logo.webp"]{display:block;width:min(100%,300px);max-height:112px;height:auto;object-fit:contain}

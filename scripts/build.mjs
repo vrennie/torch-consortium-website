@@ -53,7 +53,7 @@ function banner(title,kicker,description=''){return '<section class="banner"><di
 function image(p){const x=p.content.match(/!\[[^\]]*\]\(([^)]+)\)/);return x?fix('<img src="'+escape(x[1])+'" alt="" loading="lazy">'):''}
 function personCard(p){
  const photo=image(p);
- const initials=p.title.replace(/^(Prof\\.?|Dr\\.?)\\s+/i,'').split(/\\s+/).filter(Boolean).slice(0,2).map(x=>x[0]||'').join('').toUpperCase();
+ const initials=p.title.replace(/^(Prof\.?|Dr\.?)\s+/i,'').split(/\s+/).filter(Boolean).slice(0,2).map(x=>x[0]||'').join('').toUpperCase();
  return '<a class="person-card" href="'+link(p.slug+'/')+'" aria-label="View '+escape(p.title)+' profile">'+
    '<div class="person-photo">'+(photo||'<div class="person-fallback" aria-hidden="true">'+escape(initials)+'</div>')+'</div>'+
    '<div class="person-name">'+escape(p.title)+'</div></a>';

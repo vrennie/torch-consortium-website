@@ -31,8 +31,8 @@ jobs:
         run: |
           test -s dist/index.html
           test -s dist/assets/site.css
-          test -s dist/branding/torch-horizontal.png
-          test -s dist/branding/torch-square.png
+          test -s dist/branding/torch-horizontal.svg
+          test -s dist/branding/torch-square.svg
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

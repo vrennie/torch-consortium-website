@@ -51,6 +51,13 @@ function frame(title,body){
 }
 function banner(title,kicker,description=''){return '<section class="banner"><div class="shell"><div class="eyebrow">'+escape(kicker)+'</div><h1>'+escape(title)+'</h1>'+(description?'<p>'+escape(description)+'</p>':'')+'</div></section>'}
 function image(p){const x=p.content.match(/!\[[^\]]*\]\(([^)]+)\)/);return x?fix('<img src="'+escape(x[1])+'" alt="" loading="lazy">'):''}
+function personCard(p){
+ const photo=image(p);
+ const initials=p.title.replace(/^(Prof\\.?|Dr\\.?)\\s+/i,'').split(/\\s+/).filter(Boolean).slice(0,2).map(x=>x[0]||'').join('').toUpperCase();
+ return '<a class="person-card" href="'+link(p.slug+'/')+'" aria-label="View '+escape(p.title)+' profile">'+
+   '<div class="person-photo">'+(photo||'<div class="person-fallback" aria-hidden="true">'+escape(initials)+'</div>')+'</div>'+
+   '<div class="person-name">'+escape(p.title)+'</div></a>';
+}
 function summary(p){
  let s=p.content
    .replace(/!\[[^\]]*\]\([^)]+\)/g,' ')
@@ -91,6 +98,15 @@ for(const [slug,section,heading,sub] of [
  ['vacancies','Vacancies','Vacancies','Past and current opportunities.'],
  ['about','About','About TORCH','Our mission, focus areas and collaborations.']
 ]){
+ if(slug==='people'){
+  const groups=JSON.parse(await readFile('data/people.json','utf8'));
+  const sections=groups.map(group=>{
+   const cards=group.members.map(id=>bySlug.get(id)).filter(p=>p&&p.section==='People'&&!p.draft);
+   return '<section class="people-group" aria-label="'+escape(group.title)+'"><h2>'+escape(group.title)+'</h2><div class="people-grid">'+cards.map(personCard).join('')+'</div></section>';
+  }).join('');
+  await save('people/index.html',frame('People',banner('People','TORCH Consortium','Meet the researchers and partners in the TORCH consortium.')+'<div class="shell list-wrap">'+sections+'</div>'));
+  continue;
+ }
  if(slug==='projects'){
   const catalog=JSON.parse(await readFile('data/projects.json','utf8'));
   const renderGroup=(title,ids)=>'<section class="project-group" aria-label="'+escape(title)+'"><h2>'+escape(title)+'</h2><div class="cards">'+ids.map(id=>bySlug.get(id)).filter(p=>p&&!p.draft).map(card).join('')+'</div></section>';

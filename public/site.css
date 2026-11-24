@@ -68,3 +68,13 @@
 /* PARR-TB resource cards show only their linked title below the logo. */
 .resource-card .card-body{padding:17px 20px 20px;justify-content:center;text-align:center;min-height:74px}
 .resource-card .card-body h3{margin:0;line-height:1.4}
+
+/* PARR-TB directory: clear, responsive, text-only navigation. */
+.parrtb-resources{padding-top:36px;padding-bottom:72px}
+.parrtb-intro{max-width:850px;margin:0 0 32px;color:var(--muted);font-size:1.05rem;line-height:1.8}
+.parrtb-link-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.parrtb-link{display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:104px;padding:24px;border:1px solid var(--line);border-radius:12px;background:#fff;text-decoration:none;color:var(--ink);font:800 1.08rem/1.4 Manrope,sans-serif;transition:border-color .18s,box-shadow .18s,transform .18s}
+.parrtb-link:hover,.parrtb-link:focus-visible{color:var(--brand);border-color:var(--brand);box-shadow:0 9px 24px #00000012;transform:translateY(-2px)}
+.parrtb-arrow{color:var(--brand);font-size:1.3rem;font-weight:600;flex-shrink:0}
+@media(max-width:900px){.parrtb-link-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.parrtb-resources{padding-top:24px;padding-bottom:44px}.parrtb-intro{font-size:.96rem;line-height:1.65;margin-bottom:24px}.parrtb-link-grid{grid-template-columns:1fr;gap:10px}.parrtb-link{min-height:72px;padding:18px;font-size:1rem}}

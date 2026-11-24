@@ -140,6 +140,23 @@ for(const [slug,section,heading,sub] of [
     '<div class="shell body-wrap"><article class="prose vacancies-message">'+body+'</article></div>'));
   continue;
  }
+ if(slug==='parrtb'){
+  const resources=[
+   ['parrtb-intro','Guidance Document'],
+   ['relevant-documents-copy','Informed Consent'],
+   ['new-page','MICK-MAGMA Account Setup'],
+   ['treatment-guidance-tutorial','MICK-MAGMA Tutorial'],
+   ['faqs-copy-1','MICK-MAGMA Troubleshooting'],
+   ['frequently-asked-questions','Frequently asked questions'],
+   ['cro-contact-form','CRO Details'],
+   ['mickmagma-contact-form','Contact Form'],
+   ['relevant-documents','Supporting Documents']
+  ].filter(([id])=>bySlug.has(id)&&!bySlug.get(id).draft);
+  const intro='<p class="parrtb-intro">This page provides guidance and supporting resources for healthcare professionals participating in the GenPath PARR-TB study. Start with the Guidance Document for an overview of the study. You can also find information about informed consent, MICK-MAGMA account setup and treatment recommendations, troubleshooting, and frequently asked questions. For additional assistance, consult CRO Details or the Contact Form. Study materials and reference documents are available under Supporting Documents.</p>';
+  const items=resources.map(([id,title])=>'<a class="parrtb-link" href="'+link(id+'/')+'"><span>'+escape(title)+'</span><span class="parrtb-arrow" aria-hidden="true">↗</span></a>').join('');
+  await save('parrtb/index.html',frame('PARR-TB',banner('PARR-TB study resources','PARR-TB study')+'<div class="shell parrtb-resources">'+intro+'<nav class="parrtb-link-grid" aria-label="PARR-TB resource pages">'+items+'</nav></div>'));
+  continue;
+ }
  if(slug==='projects'){
   const catalog=JSON.parse(await readFile('data/projects.json','utf8'));
   const renderGroup=(title,ids)=>'<section class="project-group" aria-label="'+escape(title)+'"><h2>'+escape(title)+'</h2><div class="cards">'+ids.map(id=>bySlug.get(id)).filter(p=>p&&!p.draft).map(card).join('')+'</div></section>';

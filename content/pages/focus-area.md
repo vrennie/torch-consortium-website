@@ -17,17 +17,17 @@ draft: false
   </div>
   <div class="vision-mission-grid">
     <article class="vision-mission-card">
-      <span class="vision-mission-number" aria-hidden="true">01</span>
+      <span class="vision-mission-icon-wrap"><svg class="vision-mission-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m2 9 10-5 10 5-10 5L2 9Z"/><path d="M6 11.5V17c3.4 3.1 8.6 3.1 12 0v-5.5M22 9v7"/></svg></span>
       <h3>Build capacity</h3>
       <p>Build capacity in whole-genome sequencing of tuberculosis.</p>
     </article>
     <article class="vision-mission-card">
-      <span class="vision-mission-number" aria-hidden="true">02</span>
+      <span class="vision-mission-icon-wrap"><svg class="vision-mission-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 4c0 8 16 8 16 16M20 4C20 12 4 12 4 20M8 6h8M7 10h10M7 14h10M8 18h8"/></svg></span>
       <h3>Advance research</h3>
       <p>Deploy cutting-edge science to perform high-quality ’omics research on tuberculosis.</p>
     </article>
     <article class="vision-mission-card">
-      <span class="vision-mission-number" aria-hidden="true">03</span>
+      <span class="vision-mission-icon-wrap"><svg class="vision-mission-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.8 5.6a5.2 5.2 0 0 0-7.4 0L12 7l-1.4-1.4a5.2 5.2 0 0 0-7.4 7.4L12 22l8.8-9a5.2 5.2 0 0 0 0-7.4Z"/><path d="M3 12h5l2.1-3.6 3.2 7 2.1-3.4H21"/></svg></span>
       <h3>Translate findings</h3>
       <p>Translate findings into clinical and public health solutions.</p>
     </article>

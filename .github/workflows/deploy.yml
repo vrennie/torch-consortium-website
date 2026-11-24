@@ -45,6 +45,12 @@ jobs:
           test -s dist/branding/torch-horizontal.svg
           test -s dist/branding/torch-square.svg
           test -s dist/branding/mick-magma-logo.jpg
+          # Verify the intended Vision & Mission page structure, not just build success.
+          test "$(grep -o 'class="vision-mission-icon"' dist/focus-area/index.html | wc -l)" -eq 3
+          test "$(grep -o 'class="vision-mission-card"' dist/focus-area/index.html | wc -l)" -eq 3
+          test "$(grep -o 'class="vision-priority"' dist/focus-area/index.html | wc -l)" -eq 5
+          ! grep -q 'vision-mission-number' dist/focus-area/index.html
+          grep -q 'vision-mission-icon-wrap' dist/assets/site.css
           grep -q 'Frequently asked questions' dist/parrtb/index.html
           grep -q 'class="parrtb-link-grid"' dist/parrtb/index.html
           if grep -q 'class="cover"' dist/parrtb/index.html; then

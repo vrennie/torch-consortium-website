@@ -7,8 +7,9 @@ document.querySelectorAll('[data-book]').forEach(book=>{
    if(k===i){const img=slide.querySelector('img');img.style.width=(z*100)+'%';img.style.maxWidth=z===1?'100%':'none';find('[data-original]').href=img.src;}
   });
   nums.forEach((b,k)=>k===i?b.setAttribute('aria-current','page'):b.removeAttribute('aria-current'));
-  find('[data-counter]').textContent='Page '+(i+1)+' of '+slides.length;
+  find('[data-counter]').textContent='Page '+(i+1)+' / '+slides.length;
   find('[data-zoom]').textContent=(z*100)+'%';
+  slides[i].querySelector('.book-image').scrollTo(0,0);
   find('[data-previous]').disabled=i===0;find('[data-next]').disabled=i===slides.length-1;
   find('[data-out]').disabled=z===1;find('[data-in]').disabled=z===3;
  }

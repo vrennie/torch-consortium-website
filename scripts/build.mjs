@@ -75,8 +75,31 @@ function card(p){
  return '<a class="card'+(project?' project-card':'')+'" href="'+link(p.slug+'/')+'"><div class="cover">'+visual+'</div><div class="card-body"><h3>'+escape(p.title)+'</h3><p>'+summary(p)+'</p><b>Explore ↗</b></div></a>';
 }
 function renderBooklet(){
- const names=['ab31933f-PARR-TB_MO_Brochure.png','db5d3d9f-PARR-TB_MO_Brochure2.png','511df6f0-PARR-TB_MO_Brochure3.png','f9a4e871-PARR-TB_MO_Brochure4.png'];
- return '<section class="book-reader" data-book tabindex="0" aria-label="PARR-TB four-page information pamphlet"><div class="book-heading"><h3>Information pamphlet for Medical Officers</h3><p>Read the four pages below. Use zoom to enlarge the text.</p></div><div class="book-controls"><button data-previous type="button">← Previous</button><strong data-counter aria-live="polite">1 / 4</strong><button data-next type="button">Next →</button><button data-out type="button" aria-label="Zoom out">−</button><span data-zoom>100%</span><button data-in type="button" aria-label="Zoom in">+</button><button data-fit type="button">Fit</button><a data-original target="_blank" rel="noopener">Full-size image ↗</a></div><div class="book-stage">'+names.map((name,i)=>'<figure data-slide'+(i?' hidden':'')+'><div class="book-image"><img src="'+link('assets/media/'+name)+'" alt="Pamphlet page '+(i+1)+' of four" loading="'+(i?'lazy':'eager')+'"></div><figcaption>Page '+(i+1)+' of 4</figcaption></figure>').join('')+'</div><nav class="book-pages" aria-label="Select pamphlet page">'+names.map((_,i)=>'<button data-page="'+i+'" type="button">'+(i+1)+'</button>').join('')+'</nav></section>';
+ const names=[
+  'ab31933f-PARR-TB_MO_Brochure.png',
+  'db5d3d9f-PARR-TB_MO_Brochure2.png',
+  '511df6f0-PARR-TB_MO_Brochure3.png',
+  'f9a4e871-PARR-TB_MO_Brochure4.png'
+ ];
+ const controls='<div class="book-controls" role="toolbar" aria-label="Document navigation and zoom">'+
+  '<div class="book-nav"><button data-previous type="button" title="Previous page" aria-label="Previous page">↑</button>'+
+  '<button data-next type="button" title="Next page" aria-label="Next page">↓</button>'+
+  '<span data-counter role="status" aria-live="polite">Page 1 / 4</span></div>'+
+  '<div class="book-tools"><button data-out type="button" aria-label="Zoom out" title="Zoom out">−</button>'+
+  '<button data-in type="button" aria-label="Zoom in" title="Zoom in">+</button>'+
+  '<span data-zoom>100%</span>'+
+  '<button data-fit type="button" title="Fit page">Fit</button>'+
+  '<a data-original target="_blank" rel="noopener" title="View full-resolution image" aria-label="Open this page full-size">↗</a></div>'+
+  '</div>';
+ const slides=names.map((name,i)=>'<figure data-slide'+(i?' hidden':'')+'>'+
+  '<div class="book-image"><img src="'+link('assets/media/'+name)+'" alt="PARR-TB Medical Officers pamphlet, page '+(i+1)+' of four" loading="'+(i?'lazy':'eager')+'"></div>'+
+  '</figure>').join('');
+ return '<section class="book-reader" data-book tabindex="0" aria-label="Four-page PARR-TB medical officers pamphlet">'+
+  controls+'<div class="book-stage">'+slides+'</div>'+
+  '<div class="book-footer"><span>Information pamphlet for Medical Officers</span>'+
+  '<nav class="book-pages" aria-label="Jump to page">'+
+  names.map((_,i)=>'<button data-page="'+i+'" type="button" aria-label="Go to page '+(i+1)+'">'+(i+1)+'</button>').join('')+
+  '</nav></div></section>';
 }
 async function save(p,html){const path=join(output,p);await mkdir(dirname(path),{recursive:true});await writeFile(path,html)}
 await mkdir(join(output,'assets'),{recursive:true});

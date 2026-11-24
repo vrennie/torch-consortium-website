@@ -84,7 +84,7 @@ function card(p){
  const resource=p.section==='PARR-TB';
  const asset=resource?parrtbImages[p.slug]:null;
  const visual=asset?'<img src="'+link(asset)+'" alt="" loading="lazy">':image(p)||(project?'<img src="'+link('branding/torch-horizontal.svg')+'" alt="TORCH Consortium logo" loading="lazy">':'<span>T.</span>');
- return '<a class="card'+(project?' project-card':'')+(resource?' resource-card':'')+'" href="'+link(p.slug+'/')+'"><div class="cover">'+visual+'</div><div class="card-body"><h3>'+escape(p.title)+'</h3><p>'+summary(p)+'</p><b>Explore ↗</b></div></a>';
+ return '<a class="card'+(project?' project-card':'')+(resource?' resource-card':'')+'" href="'+link(p.slug+'/')+'"><div class="cover">'+visual+'</div><div class="card-body"><h3>'+escape(p.title)+'</h3>'+(resource?'':'<p>'+summary(p)+'</p><b>Explore ↗</b>')+'</div></a>';
 }
 function renderBooklet(){
  const url=link('assets/documents/PARR-TB-Medical-Officers-Pamphlet.pdf');

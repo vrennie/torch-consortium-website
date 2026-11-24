@@ -78,3 +78,14 @@
 .parrtb-arrow{color:var(--brand);font-size:1.3rem;font-weight:600;flex-shrink:0}
 @media(max-width:900px){.parrtb-link-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.parrtb-resources{padding-top:24px;padding-bottom:44px}.parrtb-intro{font-size:.96rem;line-height:1.65;margin-bottom:24px}.parrtb-link-grid{grid-template-columns:1fr;gap:10px}.parrtb-link{min-height:72px;padding:18px;font-size:1rem}}
+
+/* PARR-TB navigation: reinforced card layout, with headings and subtitles. */
+.parrtb-link-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:stretch}
+.parrtb-link-grid>a.parrtb-link{display:flex;box-sizing:border-box;min-width:0;min-height:118px;align-items:center;justify-content:space-between;gap:16px;padding:22px 24px;border:1px solid #d8d8d8;border-radius:12px;background:#fff;text-decoration:none;color:#151515;box-shadow:0 2px 7px #00000006}
+.parrtb-link-copy{display:flex;flex-direction:column;gap:8px;min-width:0}
+.parrtb-link-copy strong{font:800 17px/1.35 Manrope,sans-serif;letter-spacing:-.015em}
+.parrtb-link-copy small{font:400 13px/1.35 'DM Sans',sans-serif;color:#777}
+.parrtb-link-grid>a.parrtb-link:hover,.parrtb-link-grid>a.parrtb-link:focus-visible{border-color:var(--brand);background:#fffafd;box-shadow:0 10px 25px #00000012;transform:translateY(-2px)}
+.parrtb-link-grid>a.parrtb-link .parrtb-arrow{color:var(--brand);font-size:23px}
+@media(max-width:900px){.parrtb-link-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.parrtb-link-grid{grid-template-columns:1fr;gap:12px}.parrtb-link-grid>a.parrtb-link{min-height:91px;padding:18px 20px}}

@@ -47,7 +47,7 @@ function fix(html){
 }
 const navHtml=nav.map(n=>n.items?'<details><summary>'+escape(n.label)+'</summary><div class="dropdown">'+(n.label==='Projects'?'':'<a href="'+link(n.href)+'">Overview</a>')+n.items.map(c=>'<a href="'+link(c[1])+'">'+escape(c[0])+'</a>').join('')+'</div></details>':'<a href="'+link(n.href)+'">'+escape(n.label)+'</a>').join('');
 function frame(title,body){
- return '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+escape(title)+' | TORCH Consortium</title><meta name="description" content="Tuberculosis Omics ResearCH (TORCH) consortium"><link rel="icon" href="'+link('torch-lungs-favicon.svg')+'"><link rel="stylesheet" href="'+link('assets/site.css')+'"></head><body><a class="skip" href="#main">Skip to content</a><header><div class="shell head"><a class="brand" href="'+link('')+'" aria-label="TORCH Consortium home"><img class="brand-logo" src="'+link('branding/torch-horizontal.svg')+'" alt="TORCH — Tuberculosis Omics ResearCH"></a><nav>'+navHtml+'</nav></div></header><main id="main">'+body+'</main><footer><div class="shell foot"><div><strong>TORCH Consortium</strong><p>Collaborative research on tuberculosis genomics and omics.</p></div><div><a href="'+link('what-we-do/')+'">About</a><a href="'+link('publications/')+'">Publications</a><a href="'+link('contact-us/')+'">Contact</a></div></div><div class="shell fine">© '+new Date().getUTCFullYear()+' TORCH Consortium</div></footer>'+''+'</body></html>';
+ return '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+escape(title)+' | TORCH Consortium</title><meta name="description" content="Tuberculosis Omics ResearCH (TORCH) consortium"><link rel="icon" href="'+link('torch-lungs-favicon.svg')+'"><link rel="stylesheet" href="'+link('assets/site.css')+'?v=parrtb-grid-20261124'+'"></head><body><a class="skip" href="#main">Skip to content</a><header><div class="shell head"><a class="brand" href="'+link('')+'" aria-label="TORCH Consortium home"><img class="brand-logo" src="'+link('branding/torch-horizontal.svg')+'" alt="TORCH — Tuberculosis Omics ResearCH"></a><nav>'+navHtml+'</nav></div></header><main id="main">'+body+'</main><footer><div class="shell foot"><div><strong>TORCH Consortium</strong><p>Collaborative research on tuberculosis genomics and omics.</p></div><div><a href="'+link('what-we-do/')+'">About</a><a href="'+link('publications/')+'">Publications</a><a href="'+link('contact-us/')+'">Contact</a></div></div><div class="shell fine">© '+new Date().getUTCFullYear()+' TORCH Consortium</div></footer>'+''+'</body></html>';
 }
 function banner(title,kicker,description=''){return '<section class="banner"><div class="shell"><div class="eyebrow">'+escape(kicker)+'</div><h1>'+escape(title)+'</h1>'+(description?'<p>'+escape(description)+'</p>':'')+'</div></section>'}
 function image(p){const x=p.content.match(/!\[[^\]]*\]\(([^)]+)\)/);return x?fix('<img src="'+escape(x[1])+'" alt="" loading="lazy">'):''}
@@ -153,7 +153,18 @@ for(const [slug,section,heading,sub] of [
    ['relevant-documents','Supporting Documents']
   ].filter(([id])=>bySlug.has(id)&&!bySlug.get(id).draft);
   const intro='<p class="parrtb-intro">This page provides guidance and supporting resources for healthcare professionals participating in the GenPath PARR-TB study. Start with the Guidance Document for an overview of the study. You can also find information about informed consent, MICK-MAGMA account setup and treatment recommendations, troubleshooting, and frequently asked questions. For additional assistance, consult CRO Details or the Contact Form. Study materials and reference documents are available under Supporting Documents.</p>';
-  const items=resources.map(([id,title])=>'<a class="parrtb-link" href="'+link(id+'/')+'"><span>'+escape(title)+'</span><span class="parrtb-arrow" aria-hidden="true">↗</span></a>').join('');
+  const subtitles={
+   'parrtb-intro':'Study overview',
+   'relevant-documents-copy':'Consent requirements',
+   'new-page':'Getting started',
+   'treatment-guidance-tutorial':'Treatment guidance',
+   'faqs-copy-1':'Technical support',
+   'frequently-asked-questions':'Common questions',
+   'cro-contact-form':'Clinical research contacts',
+   'mickmagma-contact-form':'Submit enquiries',
+   'relevant-documents':'Study reference materials'
+  };
+  const items=resources.map(([id,title])=>'<a class="parrtb-link" href="'+link(id+'/')+'"><span class="parrtb-link-copy"><strong>'+escape(title)+'</strong><small>'+escape(subtitles[id]||'')+'</small></span><span class="parrtb-arrow" aria-hidden="true">↗</span></a>').join('');
   await save('parrtb/index.html',frame('PARR-TB',banner('PARR-TB study resources','PARR-TB study')+'<div class="shell parrtb-resources">'+intro+'<nav class="parrtb-link-grid" aria-label="PARR-TB resource pages">'+items+'</nav></div>'));
   continue;
  }

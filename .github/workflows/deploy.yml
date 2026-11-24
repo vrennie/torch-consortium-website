@@ -27,12 +27,21 @@ jobs:
         run: |
           test -d public/assets/media
           echo "Archived images: $(find public/assets/media -type f ! -name '.gitkeep' | wc -l)"
+      - name: Set up Python for PDF generation
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Generate four-page pamphlet PDF
+        run: |
+          python -m pip install --disable-pip-version-check pillow
+          python scripts/make_parrtb_pdf.py
       - name: Build website
         run: npm run build
       - name: Check generated website
         run: |
           test -s dist/index.html
           test -s dist/assets/site.css
+          test -s dist/assets/documents/PARR-TB-Medical-Officers-Pamphlet.pdf
           test -s dist/branding/torch-horizontal.svg
           test -s dist/branding/torch-square.svg
       - uses: actions/upload-pages-artifact@v3

@@ -47,7 +47,7 @@ function fix(html){
 }
 const navHtml=nav.map(n=>n.items?'<details><summary>'+escape(n.label)+'</summary><div class="dropdown">'+(n.label==='Projects'?'':'<a href="'+link(n.href)+'">Overview</a>')+n.items.map(c=>'<a href="'+link(c[1])+'">'+escape(c[0])+'</a>').join('')+'</div></details>':'<a href="'+link(n.href)+'">'+escape(n.label)+'</a>').join('');
 function frame(title,body){
- return '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+escape(title)+' | TORCH Consortium</title><meta name="description" content="Tuberculosis Omics ResearCH (TORCH) consortium"><link rel="icon" href="'+link('torch-lungs-favicon.svg')+'"><link rel="stylesheet" href="'+link('assets/site.css')+'"></head><body><a class="skip" href="#main">Skip to content</a><header><div class="shell head"><a class="brand" href="'+link('')+'" aria-label="TORCH Consortium home"><img class="brand-logo" src="'+link('branding/torch-horizontal.svg')+'" alt="TORCH — Tuberculosis Omics ResearCH"></a><nav>'+navHtml+'</nav></div></header><main id="main">'+body+'</main><footer><div class="shell foot"><div><strong>TORCH Consortium</strong><p>Collaborative research on tuberculosis genomics and omics.</p></div><div><a href="'+link('what-we-do/')+'">About</a><a href="'+link('publications/')+'">Publications</a><a href="'+link('contact-us/')+'">Contact</a></div></div><div class="shell fine">© '+new Date().getUTCFullYear()+' TORCH Consortium</div></footer>'+(title==='Introduction'?'<script defer src="'+link('pamphlet.js')+'"></script>':'')+'</body></html>';
+ return '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+escape(title)+' | TORCH Consortium</title><meta name="description" content="Tuberculosis Omics ResearCH (TORCH) consortium"><link rel="icon" href="'+link('torch-lungs-favicon.svg')+'"><link rel="stylesheet" href="'+link('assets/site.css')+'"></head><body><a class="skip" href="#main">Skip to content</a><header><div class="shell head"><a class="brand" href="'+link('')+'" aria-label="TORCH Consortium home"><img class="brand-logo" src="'+link('branding/torch-horizontal.svg')+'" alt="TORCH — Tuberculosis Omics ResearCH"></a><nav>'+navHtml+'</nav></div></header><main id="main">'+body+'</main><footer><div class="shell foot"><div><strong>TORCH Consortium</strong><p>Collaborative research on tuberculosis genomics and omics.</p></div><div><a href="'+link('what-we-do/')+'">About</a><a href="'+link('publications/')+'">Publications</a><a href="'+link('contact-us/')+'">Contact</a></div></div><div class="shell fine">© '+new Date().getUTCFullYear()+' TORCH Consortium</div></footer>'+''+'</body></html>';
 }
 function banner(title,kicker,description=''){return '<section class="banner"><div class="shell"><div class="eyebrow">'+escape(kicker)+'</div><h1>'+escape(title)+'</h1>'+(description?'<p>'+escape(description)+'</p>':'')+'</div></section>'}
 function image(p){const x=p.content.match(/!\[[^\]]*\]\(([^)]+)\)/);return x?fix('<img src="'+escape(x[1])+'" alt="" loading="lazy">'):''}
@@ -75,42 +75,25 @@ function card(p){
  return '<a class="card'+(project?' project-card':'')+'" href="'+link(p.slug+'/')+'"><div class="cover">'+visual+'</div><div class="card-body"><h3>'+escape(p.title)+'</h3><p>'+summary(p)+'</p><b>Explore ↗</b></div></a>';
 }
 function renderBooklet(){
- const names=[
-  'ab31933f-PARR-TB_MO_Brochure.png',
-  'db5d3d9f-PARR-TB_MO_Brochure2.png',
-  '511df6f0-PARR-TB_MO_Brochure3.png',
-  'f9a4e871-PARR-TB_MO_Brochure4.png'
- ];
- const controls='<div class="book-controls" role="toolbar" aria-label="Document navigation and zoom">'+
-  '<div class="book-nav"><button data-previous type="button" title="Previous page" aria-label="Previous page">↑</button>'+
-  '<button data-next type="button" title="Next page" aria-label="Next page">↓</button>'+
-  '<span data-counter role="status" aria-live="polite">Page 1 / 4</span></div>'+
-  '<div class="book-tools"><button data-out type="button" aria-label="Zoom out" title="Zoom out">−</button>'+
-  '<button data-in type="button" aria-label="Zoom in" title="Zoom in">+</button>'+
-  '<span data-zoom>100%</span>'+
-  '<button data-fit type="button" title="Fit page">Fit</button>'+
-  '<a data-original target="_blank" rel="noopener" title="View full-resolution image" aria-label="Open this page full-size">↗</a></div>'+
-  '</div>';
- const slides=names.map((name,i)=>'<figure data-slide'+(i?' hidden':'')+'>'+
-  '<div class="book-image"><img src="'+link('assets/media/'+name)+'" alt="PARR-TB Medical Officers pamphlet, page '+(i+1)+' of four" loading="'+(i?'lazy':'eager')+'"></div>'+
-  '</figure>').join('');
- return '<section class="book-reader" data-book tabindex="0" aria-label="Four-page PARR-TB medical officers pamphlet">'+
-  controls+'<div class="book-stage">'+slides+'</div>'+
-  '<div class="book-footer"><span>Information pamphlet for Medical Officers</span>'+
-  '<nav class="book-pages" aria-label="Jump to page">'+
-  names.map((_,i)=>'<button data-page="'+i+'" type="button" aria-label="Go to page '+(i+1)+'">'+(i+1)+'</button>').join('')+
-  '</nav></div></section>';
+ const url=link('assets/documents/PARR-TB-Medical-Officers-Pamphlet.pdf');
+ return '<section class="native-pdf" aria-label="PARR-TB medical officers pamphlet PDF">'+
+  '<div class="native-pdf-actions"><span>Medical Officers information pamphlet · 4 pages</span>'+
+  '<div><a href="'+url+'" target="_blank" rel="noopener">Open full screen ↗</a>'+
+  '<a href="'+url+'" download="PARR-TB-Medical-Officers-Pamphlet.pdf">Download PDF ↓</a></div></div>'+
+  '<iframe src="'+url+'#view=FitH&toolbar=1" title="PARR-TB Medical Officers information pamphlet (4-page PDF)" loading="lazy"></iframe>'+
+  '<p class="native-pdf-fallback">If the document does not appear, <a href="'+url+'" target="_blank" rel="noopener">open the PDF in a new tab</a>.</p>'+
+  '</section>';
 }
 async function save(p,html){const path=join(output,p);await mkdir(dirname(path),{recursive:true});await writeFile(path,html)}
 await mkdir(join(output,'assets'),{recursive:true});
 await copyFile('public/site.css',join(output,'assets','site.css'));
-await copyFile('public/pamphlet.js',join(output,'pamphlet.js'));
 await copyFile('public/favicon.svg',join(output,'favicon.svg'));
 await copyFile('public/torch-lungs-favicon.svg',join(output,'torch-lungs-favicon.svg'));
 await mkdir(join(output,'branding'),{recursive:true});
 await copyFile('public/branding/torch-horizontal.svg',join(output,'branding','torch-horizontal.svg'));
 await copyFile('public/branding/torch-square.svg',join(output,'branding','torch-square.svg'));
 if(existsSync('public/assets/media'))await cp('public/assets/media',join(output,'assets','media'),{recursive:true});
+if(existsSync('public/assets/documents'))await cp('public/assets/documents',join(output,'assets','documents'),{recursive:true});
 if(domain)await copyFile('CNAME',join(output,'CNAME'));
 await writeFile(join(output,'.nojekyll'),'');
 for(const p of pages){

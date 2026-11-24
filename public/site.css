@@ -51,102 +51,12 @@
 @media(max-width:680px){.people-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.people-group+.people-group{margin-top:48px}.person-name{min-height:70px;padding:10px;font-size:.95rem}}
 @media(max-width:390px){.people-grid{grid-template-columns:1fr 1fr;gap:10px}.person-card{border-radius:12px}.person-name{font-size:.84rem}}
 
-/* Compact embedded document reader, inspired by conventional PDF viewing controls. */
-.book-reader{
-  max-width:780px;
-  margin:28px auto 40px;
-  border:1px solid #c7c7c7;
-  background:#fff;
-  border-radius:3px;
-  overflow:hidden;
-  box-shadow:0 2px 12px rgba(0,0,0,.06);
-}
-.book-controls{
-  min-height:43px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:10px;
-  padding:6px 12px;
-  background:#555;
-  color:#fff;
-}
-.book-nav,.book-tools{
-  display:flex;
-  align-items:center;
-  gap:6px;
-}
-.book-controls button,.book-controls a{
-  width:30px;height:29px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  border:1px solid #777;
-  border-radius:3px;
-  padding:0;
-  font:700 18px/1 'DM Sans',Arial,sans-serif;
-  background:#696969;
-  color:#fff!important;
-  text-decoration:none;
-  cursor:pointer;
-}
-.book-controls button:hover:not(:disabled),.book-controls a:hover{background:#7e7e7e}
-.book-controls button:disabled{opacity:.35;cursor:default}
-.book-controls [data-counter],.book-controls [data-zoom]{
-  font:500 12px/1.25 'DM Sans',Arial,sans-serif;
-  white-space:nowrap;
-  margin:0 6px;
-  color:#f7f7f7;
-}
-.book-controls [data-fit]{font-size:11px;width:34px}
-.book-stage{padding:0;background:#f1f1f1}
-.book-stage figure{display:block;margin:0}
-.book-stage figure[hidden]{display:none}
-.book-image{
-  max-height:min(87vh,1100px);
-  overflow:auto;
-  background:#fff;
-  overscroll-behavior:contain;
-  scrollbar-width:thin;
-}
-.prose .book-image img{
-  display:block;
-  margin:0 auto;
-  padding:0;
-  width:100%;
-  max-width:100%;
-  height:auto;
-  max-height:none;
-  border-radius:0;
-  object-fit:contain;
-}
-.book-footer{
-  display:flex;align-items:center;justify-content:space-between;
-  gap:12px;
-  min-height:42px;
-  padding:7px 13px;
-  background:#fafafa;
-  border-top:1px solid #dedede;
-}
-.book-footer>span{font-size:12px;color:#616161}
-.book-pages{display:flex;gap:5px}
-.book-pages button{
-  height:27px;min-width:27px;
-  border:1px solid #ccc;
-  border-radius:3px;
-  background:#fff;color:#555;
-  font:700 11px 'DM Sans',Arial,sans-serif;
-  cursor:pointer;
-}
-.book-pages button[aria-current="page"]{background:var(--brand);color:white;border-color:var(--brand)}
-.book-reader :is(button,a):focus-visible{outline:2px solid var(--brand);outline-offset:2px}
-@media(max-width:650px){
- .book-reader{margin:20px -8px 28px}
- .book-controls{padding:6px;gap:3px}
- .book-controls button,.book-controls a{width:26px;height:27px;font-size:15px}
- .book-controls [data-counter],.book-controls [data-zoom]{font-size:10px;margin:0 2px}
- .book-controls [data-fit]{width:26px;font-size:10px}
- .book-footer{padding:6px 8px}
- .book-footer>span{font-size:10px}
- .book-image{max-height:75vh}
-}
+/* Native PDF reader for four-page medical officers' pamphlet */
+.native-pdf{max-width:920px;margin:26px auto 38px;background:#fff}
+.native-pdf-actions{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:12px 0;font-size:13px}
+.native-pdf-actions>span{font-weight:700;color:#353535}
+.native-pdf-actions>div{display:flex;gap:20px;flex-wrap:wrap}
+.native-pdf-actions a{font-weight:700;text-decoration:none;color:var(--brand)}
+.native-pdf iframe{display:block;width:100%;height:850px;border:1px solid #d5d5d5;background:#fafafa}
+.native-pdf-fallback{font-size:12px;color:#555;margin:8px 0}
+@media(max-width:760px){.native-pdf-actions{align-items:flex-start;flex-direction:column}.native-pdf iframe{height:72vh;min-height:440px}}

@@ -33,7 +33,7 @@ jobs:
           python-version: '3.12'
       - name: Generate four-page pamphlet PDF
         run: |
-          python -m pip install --disable-pip-version-check pillow
+          python -m pip install --disable-pip-version-check pillow pypdf
           python scripts/make_parrtb_pdf.py
       - name: Build website
         run: npm run build

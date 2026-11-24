@@ -28,7 +28,7 @@ for filename in PAGES:
         print(f"Page {len(images)}: {filename} {image.width}x{image.height}")
 DEST.parent.mkdir(parents=True, exist_ok=True)
 images[0].save(DEST, format="PDF", save_all=True, append_images=images[1:], resolution=150.0, quality=95, optimize=True, title="PARR-TB Information Pamphlet for Medical Officers")
-with Image.open(DEST) as check:
-    check.seek(3)
-    assert check.n_frames == 4, f"Expected four pages, got {check.n_frames}"
+from pypdf import PdfReader
+count = len(PdfReader(str(DEST)).pages)
+assert count == 4, f"Expected four pages, got {count}"
 print(f"Created {DEST} ({DEST.stat().st_size:,} bytes), four pages")

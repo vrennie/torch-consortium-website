@@ -26,3 +26,13 @@
 .project-group h2{font-size:clamp(1.65rem,2.6vw,2.3rem);margin:0 0 24px;padding-bottom:12px;border-bottom:2px solid var(--brand)}
 .project-group h2[id]{scroll-margin-top:130px}
 @media(max-width:760px){.project-group + .project-group{margin-top:45px}.project-group h2[id]{scroll-margin-top:20px}}
+
+/* Compact project cards: white logo area, soft-grey information panel */
+.project-card{background:#f3f3f3}
+.project-card .cover{height:154px;background:#fff;padding:22px 26px}
+.project-card .cover img{width:auto;max-width:78%;height:auto;max-height:104px;object-fit:contain;background:transparent}
+.project-card .card-body{background:#f3f3f3;padding:22px 24px 24px;min-height:205px}
+.project-card h3{margin:0 0 12px;font-size:18px;line-height:1.35}
+.project-card p{margin:0 0 18px;line-height:1.55;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;flex:none}
+.project-card b{margin-top:auto}
+@media(max-width:530px){.project-card .cover{height:140px;padding:18px}.project-card .cover img{max-height:96px}.project-card .card-body{min-height:0}}

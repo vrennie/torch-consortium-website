@@ -51,8 +51,24 @@ function frame(title,body){
 }
 function banner(title,kicker,description=''){return '<section class="banner"><div class="shell"><div class="eyebrow">'+escape(kicker)+'</div><h1>'+escape(title)+'</h1>'+(description?'<p>'+escape(description)+'</p>':'')+'</div></section>'}
 function image(p){const x=p.content.match(/!\[[^\]]*\]\(([^)]+)\)/);return x?fix('<img src="'+escape(x[1])+'" alt="" loading="lazy">'):''}
-function summary(p){let s=p.content.replace(/!\[[^\]]*\]\([^)]+\)/g,' ').replace(/\[([^\]]+)\]\([^)]+\)/g,'$1').replace(/[#*_>]/g,'').replace(/\s+/g,' ').trim();return escape(s.length>140?s.slice(0,137)+'…':s)}
-function card(p){return '<a class="card" href="'+link(p.slug+'/')+'"><div class="cover">'+(image(p)||'<span>T.</span>')+'</div><div class="card-body"><h3>'+escape(p.title)+'</h3><p>'+summary(p)+'</p><b>Explore ↗</b></div></a>'}
+function summary(p){
+ let s=p.content
+  .replace(/!\[[^\]]*\]\([^)]+\)/g,' ')
+  .replace(/^#{1,6}\s+.*$/gm,' ')
+  .replace(/\[([^\]]+)\]\([^)]+\)/g,'$1')
+  .replace(/[#*_>]/g,'')
+  .replace(/\s+/g,' ').trim();
+ const title=p.title.replace(/[.*+?^$\{\}()|[\]\\]/g,'\\function summary(p){let s=p.content.replace(/!\[[^\]]*\]\([^)]+\)/g,' ').replace(/\[([^\]]+)\]\([^)]+\)/g,'$1').replace(/[#*_>]/g,'').replace(/\s+/g,' ').trim();return escape(s.length>140?s.slice(0,137)+'…':s)}
+function card(p){return '<a class="card" href="'+link(p.slug+'/')+'"><div class="cover">'+(image(p)||'<span>T.</span>')+'</div><div class="card-body"><h3>'+escape(p.title)+'</h3><p>'+summary(p)+'</p><b>Explore ↗</b></div></a>'}');
+ s=s.replace(new RegExp('^'+title+'\\s*[-–:]?\\s*','i'),'').trim();
+ if(!s || s.startsWith('No text was included'))return 'Project details coming soon.';
+ return escape(s.length>125?s.slice(0,122).replace(/\\s+\\S*$/,'')+'…':s);
+}
+function card(p){
+ const project=p.section==='Projects';
+ const visual=image(p)||(project?'<img src="'+link('branding/torch-horizontal.svg')+'" alt="TORCH Consortium logo" loading="lazy">':'<span>T.</span>');
+ return '<a class="card'+(project?' project-card':'')+'" href="'+link(p.slug+'/')+'"><div class="cover">'+visual+'</div><div class="card-body"><h3>'+escape(p.title)+'</h3><p>'+summary(p)+'</p><b>Explore ↗</b></div></a>';
+}
 async function save(p,html){const path=join(output,p);await mkdir(dirname(path),{recursive:true});await writeFile(path,html)}
 await mkdir(join(output,'assets'),{recursive:true});
 await copyFile('public/site.css',join(output,'assets','site.css'));

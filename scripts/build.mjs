@@ -108,6 +108,12 @@ for(const [slug,section,heading,sub] of [
   await save('people/index.html',frame('People',banner('People','TORCH Consortium','Meet the researchers and partners in the TORCH consortium.')+'<div class="shell list-wrap">'+sections+'</div>'));
   continue;
  }
+ if(slug==='vacancies'){
+  const body=fix(marked.parse(await readFile('content/vacancies.md','utf8')));
+  await save('vacancies/index.html',frame('Vacancies',banner('Vacancies','TORCH Consortium')+
+    '<div class="shell body-wrap"><article class="prose vacancies-message">'+body+'</article></div>'));
+  continue;
+ }
  if(slug==='projects'){
   const catalog=JSON.parse(await readFile('data/projects.json','utf8'));
   const renderGroup=(title,ids)=>'<section class="project-group" aria-label="'+escape(title)+'"><h2>'+escape(title)+'</h2><div class="cards">'+ids.map(id=>bySlug.get(id)).filter(p=>p&&!p.draft).map(card).join('')+'</div></section>';

@@ -53,16 +53,14 @@ function banner(title,kicker,description=''){return '<section class="banner"><di
 function image(p){const x=p.content.match(/!\[[^\]]*\]\(([^)]+)\)/);return x?fix('<img src="'+escape(x[1])+'" alt="" loading="lazy">'):''}
 function summary(p){
  let s=p.content
-  .replace(/!\[[^\]]*\]\([^)]+\)/g,' ')
-  .replace(/^#{1,6}\s+.*$/gm,' ')
-  .replace(/\[([^\]]+)\]\([^)]+\)/g,'$1')
-  .replace(/[#*_>]/g,'')
-  .replace(/\s+/g,' ').trim();
- const title=p.title.replace(/[.*+?^$\{\}()|[\]\\]/g,'\\function summary(p){let s=p.content.replace(/!\[[^\]]*\]\([^)]+\)/g,' ').replace(/\[([^\]]+)\]\([^)]+\)/g,'$1').replace(/[#*_>]/g,'').replace(/\s+/g,' ').trim();return escape(s.length>140?s.slice(0,137)+'…':s)}
-function card(p){return '<a class="card" href="'+link(p.slug+'/')+'"><div class="cover">'+(image(p)||'<span>T.</span>')+'</div><div class="card-body"><h3>'+escape(p.title)+'</h3><p>'+summary(p)+'</p><b>Explore ↗</b></div></a>'}');
- s=s.replace(new RegExp('^'+title+'\\s*[-–:]?\\s*','i'),'').trim();
+   .replace(/!\[[^\]]*\]\([^)]+\)/g,' ')
+   .replace(/^#{1,6}\s+.*$/gm,' ')
+   .replace(/\[([^\]]+)\]\([^)]+\)/g,'$1')
+   .replace(/[#*_>]/g,'')
+   .replace(/\s+/g,' ').trim();
+ if(s.toLowerCase().startsWith(p.title.toLowerCase()))s=s.slice(p.title.length).replace(/^\s*[-–:]?\s*/,'');
  if(!s || s.startsWith('No text was included'))return 'Project details coming soon.';
- return escape(s.length>125?s.slice(0,122).replace(/\\s+\\S*$/,'')+'…':s);
+ return escape(s.length>125?s.slice(0,122).replace(/\s+\S*$/,'')+'…':s);
 }
 function card(p){
  const project=p.section==='Projects';

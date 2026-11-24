@@ -4,12 +4,6 @@ section: "About"
 draft: false
 ---
 
-![biomina.png](/assets/media/7037a4c0-biomina.png)
-
-![adrem_groot.gif](/assets/media/dd1f5970-adrem_groot.gif)
-
-The TORCH consortium actively collaborates with and is supported by **biomina **(**biom**edical **i**nformatics research **n**etwork **A**ntwerp), an interdisciplinary research network for biomedical informatics and established by the [University of Antwerp](http://www.ua.ac.be/) and the [Antwerp University Hospital](http://www.uza.be/) as part of the Clinical Research Center Antwerp (CRC Antwerp). More specifically, the consortium works closely togeher with [Prof. Dr. Kris Laukens](https://www.uantwerpen.be/nl/personeel/kris-laukens/), bioinformatics researcher at the Biomedical informatics research center (biomina) and the ADReM datalab  at the University of Antwerp.
-
 ![ITM-logo_col_rgb.png](/assets/media/0a1de671-ITM-logo_col_rgb.png)
 
 The Institute of Tropical Medicine Antwerp (ITM) is one of the world's leading institutes for training and research in tropical medicine and the organisation of health care in developing countries. Therefore, the TORCH is excited to be able to work closely together with the ITM mycobacteriology research group of Prof. Bouke De Jong. [The Unit of Mycobacteriology](https://www.itg.be/N/dienst-mycobacteriologie#/) is dedicated to improving the health of patients suffering from mycobacterial diseases such as tuberculosis, leprosy, and Buruli ulcer.

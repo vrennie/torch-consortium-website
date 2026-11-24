@@ -6,13 +6,15 @@ draft: false
 
 # **SPUT**SEQ kick-off
 
-![](/assets/media/e11ac913-SPUTSEQ_Flyer_15oct.jpg)
+![SPUTSEQ logo](/assets/media/38bd982e-SputSeq.jpg)
 
 On October 15th, 2021, the kick-off meeting of SPUTSEQ was organized online. During this meeting, the *sputum* *think tank* concept was presented to all those interested and involved in sequencing of Mycobacterium tuberculosis directly from sputum samples. Furthermore, the new logo of the think tank was unveiled:
 
-![](/assets/media/38bd982e-SputSeq.jpg)
+### SPUTSEQ kick-off flyer
 
-The  complete presentation of the SPUTSEQ kick-off meeting.
+![](/assets/media/e11ac913-SPUTSEQ_Flyer_15oct.jpg)
+
+The complete presentation of the SPUTSEQ kick-off meeting.
 
 [View embedded media](//cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fwww.youtube.com%2Fembed%2FBY8k26ctYXw%3Ffeature%3Doembed&display_name=YouTube&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DBY8k26ctYXw&image=https%3A%2F%2Fi.ytimg.com%2Fvi%2FBY8k26ctYXw%2Fhqdefault.jpg&key=61d05c9d54e8455ea7a9677c366be814&type=text%2Fhtml&schema=youtube)
 

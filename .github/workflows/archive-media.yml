@@ -1,0 +1,39 @@
+name: Archive Squarespace media into GitHub
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/archive-media.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Download media files from original Squarespace export
+        run: node scripts/fetch-media.mjs
+      - name: Verify and commit image archive
+        shell: bash
+        run: |
+          set -euo pipefail
+          count=$(find public/assets/media -type f ! -name '.gitkeep' | wc -l)
+          echo "Archived media count: $count"
+          test "$count" -ge 90
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/assets/media
+          if ! git diff --cached --quiet; then
+            git commit -m "Archive Squarespace media files in public/assets/media"
+            git push origin HEAD:main
+          fi

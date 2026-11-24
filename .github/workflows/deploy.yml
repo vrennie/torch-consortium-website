@@ -23,8 +23,10 @@ jobs:
           node-version: 22
       - name: Install dependencies
         run: npm install --no-audit --no-fund
-      - name: Download exported images
-        run: npm run fetch-media
+      - name: Check archived assets
+        run: |
+          test -d public/assets/media
+          echo "Archived images: $(find public/assets/media -type f ! -name '.gitkeep' | wc -l)"
       - name: Build website
         run: npm run build
       - name: Check generated website

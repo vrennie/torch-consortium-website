@@ -20,3 +20,9 @@
 @media(max-width:1080px){.brand-logo{width:235px}}
 @media(max-width:760px){.brand-logo{width:215px}.hero-logo-panel{max-width:390px;width:100%;margin:auto}}
 @media(max-width:530px){.brand-logo{width:190px}.hero-square-logo{width:min(100%,285px)}}
+
+/* Grouped Projects overview */
+.project-group + .project-group{margin-top:64px}
+.project-group h2{font-size:clamp(1.65rem,2.6vw,2.3rem);margin:0 0 24px;padding-bottom:12px;border-bottom:2px solid var(--brand)}
+.project-group h2[id]{scroll-margin-top:130px}
+@media(max-width:760px){.project-group + .project-group{margin-top:45px}.project-group h2[id]{scroll-margin-top:20px}}

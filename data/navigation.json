@@ -38,24 +38,24 @@
     "href": "/projects/",
     "items": [
       [
-        "VLIR-UOS",
-        "/vliruos/"
+        "Current projects",
+        "/projects/#current-projects"
       ],
       [
-        "EXIT-RIF",
-        "/exitrif/"
+        "GenPath Africa – PARR-TB",
+        "/genpath-africa-parrtb/"
       ],
       [
-        "SMARTT trial",
-        "/smartt/"
+        "DiSrupT RR-TB",
+        "/disrupt-rr-tb/"
       ],
       [
-        "MICK-MAGMA",
+        "MICK-MAGMA Platform",
         "/new-page-2/"
       ],
       [
-        "GenPath Africa / PARR-TB",
-        "/genpath-africa-parrtb/"
+        "Past projects",
+        "/projects/#past-projects"
       ]
     ]
   },

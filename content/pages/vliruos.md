@@ -15,3 +15,13 @@ The TORCH consortium is actively engaged in building capacity for Tuberculosis r
 ### [VLIR Peru](https://torch-consortium.com/vlir_peru)
 
 [![peru.png](/assets/media/dee370bf-peru.png)](/vlir_peru)
+
+### Training and capacity-building activities
+
+The VLIR-UOS activities are presented here as a single project, with the original country and training reports retained:
+
+- [Ethiopia — overview](/vlir-ethiopia/)
+- [Ethiopia — 2018 training](/vliruos-2018/)
+- [Ethiopia — 2019 training](/vliruos-2019/)
+- [Peru — overview](/vlir_peru/)
+

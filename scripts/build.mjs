@@ -77,10 +77,17 @@ for(const [slug,section,heading,sub] of [
  ['vacancies','Vacancies','Vacancies','Past and current opportunities.'],
  ['about','About','About TORCH','Our mission, focus areas and collaborations.']
 ]){
+ if(slug==='projects'){
+  const catalog=JSON.parse(await readFile('data/projects.json','utf8'));
+  const renderGroup=(title,ids)=>'<section class="project-group" aria-label="'+escape(title)+'"><h2>'+escape(title)+'</h2><div class="cards">'+ids.map(id=>bySlug.get(id)).filter(p=>p&&!p.draft).map(card).join('')+'</div></section>';
+  const content=renderGroup('Current Projects',catalog.current)+renderGroup('Past Projects',catalog.past);
+  await save('projects/index.html',frame('Projects',banner('Projects','TORCH Consortium',sub)+'<div class="shell list-wrap">'+content+'</div>'));
+  continue;
+ }
  const list=inSection(section).filter(p=>slug!=='about'||p.slug!=='contact-us');
  await save(slug+'/index.html',frame(heading,banner(heading,'TORCH Consortium',sub)+'<div class="shell list-wrap"><div class="cards">'+list.map(card).join('')+'</div></div>'));
 }
-const selected=['smartt','new-page-2','genpath-africa-parrtb','exitrif','vliruos'].map(x=>bySlug.get(x)).filter(Boolean);
+const selected=JSON.parse(await readFile('data/projects.json','utf8')).current.map(x=>bySlug.get(x)).filter(Boolean);
 const home=bySlug.get('home');
 const logos=home?fix(marked.parse(home.content)):'';
 const landing='<section class="hero"><div class="shell hero-grid"><div><div class="eyebrow">Tuberculosis Omics ResearCH</div><h1>Research that connects.<br><em>Insights that matter.</em></h1><p>The TORCH consortium brings together researchers across institutions and disciplines to advance tuberculosis genomics, omics and translational research.</p><div class="hero-actions"><a class="button" href="'+link('what-we-do/')+'">What we do ↗</a><a class="button secondary" href="'+link('publications/')+'">Publications</a></div></div><div class="hero-logo-panel"><img class="hero-square-logo" src="'+link('branding/torch-square.svg')+'" alt="TORCH Tuberculosis Omics ResearCH logo"></div></div></section>'+

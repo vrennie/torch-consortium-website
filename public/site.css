@@ -178,3 +178,14 @@
 .prose .funding-card p{font-size:.91rem;line-height:1.6;color:#666;margin:0}
 @media(max-width:950px){.funding-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:620px){.funding-grid{grid-template-columns:1fr}.funding-card{padding:24px}.funding-logo{height:115px}}
+
+/* Each Funding card is a single accessible external link. */
+.prose a.funding-card{color:inherit;text-decoration:none;cursor:pointer;position:relative;transition:transform .2s,box-shadow .2s,border-color .2s;background:#fff}
+.prose a.funding-card:hover,.prose a.funding-card:focus-visible{transform:translateY(-3px);border-color:var(--brand);box-shadow:0 12px 28px #00000012;color:inherit}
+.prose a.funding-card:focus-visible{outline:2px solid var(--brand);outline-offset:3px}
+.prose a.funding-card h2{color:#171717}
+.prose a.funding-card p{color:#666}
+.prose .funding-disclaimer{margin:22px 0 0;text-align:center;font-size:12px;color:#777}
+.prose .funding-logo img[src$="find-logo.svg"]{width:min(85%,230px);max-height:92px}
+.prose .funding-logo img[src*="logowik.com"]{max-width:100%;max-height:115px}
+.prose .funding-logo img[src*="wikimedia.org"]{max-width:80%;max-height:112px}

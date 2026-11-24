@@ -47,6 +47,13 @@ jobs:
           test -s dist/funding/index.html
           test -s dist/funding-1/index.html
           grep -q 'class="funding-grid"' dist/funding/index.html
+          test -s dist/assets/media/find-logo.svg
+          grep -q 'https://www.finddx.org/' dist/funding/index.html
+          grep -q 'https://www.kaust.edu.sa/en/' dist/funding/index.html
+          grep -q 'https://www.cdc.gov/index.html' dist/funding/index.html
+          if grep -q 'ReSeqTB' dist/funding/index.html; then echo "ReSeqTB still present"; exit 1; fi
+          test "$(grep -o 'class="funding-card"' dist/funding/index.html | wc -l)" -eq 9
+          test "$(grep -o 'class="funding-card" href=' dist/funding/index.html | wc -l)" -eq 9
           test "$(grep -o 'class="funding-card"' dist/funding/index.html | wc -l)" -eq 9
           grep -q 'funding/' dist/funding-1/index.html
           test -s dist/branding/mick-magma-logo.jpg

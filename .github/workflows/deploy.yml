@@ -75,7 +75,7 @@ jobs:
           if grep -q 'ReSeqTB' dist/funding/index.html; then echo "ReSeqTB still present"; exit 1; fi
           test "$(grep -o 'class="funding-card"' dist/funding/index.html | wc -l)" -eq 10
           test "$(grep -o 'class="funding-card" href=' dist/funding/index.html | wc -l)" -eq 10
-          test "$(grep -o 'class="funding-card"' dist/funding/index.html | wc -l)" -eq 9
+
           grep -q 'funding/' dist/funding-1/index.html
           test -s dist/branding/mick-magma-logo.jpg
           # Verify the intended Vision & Mission page structure, not just build success.

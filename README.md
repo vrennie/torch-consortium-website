@@ -33,11 +33,27 @@ GitHub Free requires a public repository to deploy GitHub Pages. GitHub Pro/Team
 
 Later, when ready to connect torch-consortium.com, add a root-level CNAME file containing only torch-consortium.com, configure the custom domain in Settings > Pages and change DNS at your domain registrar. The build automatically switches to root-relative URLs when CNAME is present.
 
+## Archived images in the repository
+
+All **111 Squarespace-export image assets** are now stored permanently in
+[public/assets/media/](public/assets/media/). The project cards and pages load
+these local files rather than relying on Squarespace's image CDN.
+
+- To replace an image, upload a new file to `public/assets/media/`, then update
+  its Markdown image link in `content/pages/`.
+- The image shown on a project card is the **first image** in that project's
+  Markdown content file.
+- SPUTSEQ's project page is `content/pages/kickoffmeeting.md`. Its first image
+  is the SPUTSEQ logo; the original illustrated event flyer is retained below.
+- `data/media.json` remains as an archive of the original Squarespace image
+  source URLs, and `scripts/fetch-media.mjs` can be used if an asset needs to
+  be recovered.
+
 ## Migration caveats
 
 - The XML contained 81 published page records. Content is imported as editable Markdown. Several old demonstration or hidden pages were imported with draft: true.
 - Squarespace styles, forms, embedded services and widgets are not included in the XML. The new site uses a shared responsive design, not an exact copy.
-- The XML links images to Squarespace CDN rather than including the image files. The deploy workflow downloads the listed images into the generated website. Keep a separate backup of these assets, and ideally commit the downloaded files to public/assets/media for lasting independence from Squarespace.
+- The XML originally linked to Squarespace-hosted images. The imported files are now archived in `public/assets/media/` and included in normal builds.
 - Squarespace contact forms will need a replacement service before they can collect submissions.
 - Review older biographies, vacancy pages, document links, and embedded media before switching over.
 - The XML archive contains author email metadata. Before making this repository public, audit the original XML and Git history for private metadata. Deleting an XML file in a subsequent commit does not erase it from older commits.

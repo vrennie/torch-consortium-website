@@ -194,3 +194,8 @@
 .prose .funding-logo img[src*="logo-fwo.svg"]{width:min(72%,210px);height:auto;max-height:104px;object-fit:contain}
 .prose .funding-logo img[src*="CRITICAL_PATH_INSTITUTE__Logo.jpg"]{width:min(100%,265px);height:auto;max-height:105px;object-fit:contain}
 .prose .funding-logo img[src*="GetLogoFileById"]{width:min(100%,240px);height:auto;max-height:115px;object-fit:contain}
+
+/* Three locally hosted Funding logos: consistent centring and no remote-image dependency. */
+.prose .funding-logo img[src$="/fwo-logo.svg"]{width:min(94%,265px);height:auto;max-height:111px;object-fit:contain}
+.prose .funding-logo img[src$="/cdc-logo.svg"]{width:min(80%,175px);height:auto;max-height:115px;object-fit:contain}
+.prose .funding-logo img[src$="/tgen-logo.svg"]{width:min(96%,260px);height:auto;max-height:110px;object-fit:contain}

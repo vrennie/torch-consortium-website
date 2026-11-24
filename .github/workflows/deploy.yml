@@ -48,10 +48,17 @@ jobs:
           test -s dist/funding-1/index.html
           grep -q 'class="funding-grid"' dist/funding/index.html
           test -s dist/assets/media/find-logo.svg
+          test -s dist/assets/media/fwo-logo.svg
+          test -s dist/assets/media/cdc-logo.svg
+          test -s dist/assets/media/tgen-logo.svg
+          grep -q 'assets/media/fwo-logo.svg' dist/funding/index.html
+          grep -q 'assets/media/cdc-logo.svg' dist/funding/index.html
+          grep -q 'assets/media/tgen-logo.svg' dist/funding/index.html
+          if grep -Eq 'GetLogoFileById|CDC_logo_2024.svg.png|logo-fwo.svg' dist/funding/index.html; then echo "Remote logo link not removed"; exit 1; fi
           grep -q 'https://www.finddx.org/' dist/funding/index.html
-          grep -q 'logo-fwo.svg' dist/funding/index.html
+
           grep -q 'CRITICAL_PATH_INSTITUTE__Logo.jpg' dist/funding/index.html
-          grep -q 'GetLogoFileById' dist/funding/index.html
+
           grep -q 'https://c-path.org/donate/' dist/funding/index.html
           grep -q 'https://www.kaust.edu.sa/en/' dist/funding/index.html
           grep -q 'https://www.cdc.gov/index.html' dist/funding/index.html

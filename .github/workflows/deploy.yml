@@ -44,6 +44,8 @@ jobs:
           test -s dist/assets/documents/PARR-TB-Medical-Officers-Pamphlet.pdf
           test -s dist/branding/torch-horizontal.svg
           test -s dist/branding/torch-square.svg
+          test -s dist/branding/mick-magma-logo.jpg
+          grep -q 'branding/mick-magma-logo.jpg' dist/parrtb/index.html
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

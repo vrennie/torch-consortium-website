@@ -72,7 +72,7 @@ function summary(p){
 // PARR-TB resource thumbnail overrides are kept separate from page content.
 const parrtbImages={
  'cro-contact-form':'assets/media/aafdb5e6-stellenbosch_logo.jpg',
- 'faqs-copy-1':'assets/media/b227473b-horizontal_logo_Oct_2024.jpg',
+ 'faqs-copy-1':'branding/mick-magma-logo.jpg',
  'frequently-asked-questions':'branding/faq.svg',
  'mickmagma-contact-form':'assets/media/066f42ff-GPA_logo.png',
  'parrtb-intro':'assets/media/066f42ff-GPA_logo.png',
@@ -105,6 +105,7 @@ await mkdir(join(output,'branding'),{recursive:true});
 await copyFile('public/branding/torch-horizontal.svg',join(output,'branding','torch-horizontal.svg'));
 await copyFile('public/branding/torch-square.svg',join(output,'branding','torch-square.svg'));
 await copyFile('public/branding/faq.svg',join(output,'branding','faq.svg'));
+await copyFile('public/branding/mick-magma-logo.jpg',join(output,'branding','mick-magma-logo.jpg'));
 if(existsSync('public/assets/media'))await cp('public/assets/media',join(output,'assets','media'),{recursive:true});
 if(existsSync('public/assets/documents'))await cp('public/assets/documents',join(output,'assets','documents'),{recursive:true});
 if(domain)await copyFile('CNAME',join(output,'CNAME'));

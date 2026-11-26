@@ -132,6 +132,7 @@ function featuredPublications(items){
 
  '</section>';
 }
+await save('new-page-2/index.html','<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="refresh" content="0;url='+link('mick-magma/')+'"><link rel="canonical" href="'+link('mick-magma/')+'"><title>Moved to MICK-MAGMA | TORCH Consortium</title></head><body><p>This page has moved to <a href="'+link('mick-magma/')+'">MICK-MAGMA</a>.</p></body></html>');
 for(const p of pages){
  if(p.draft)continue;
  if(p.slug==='news'){

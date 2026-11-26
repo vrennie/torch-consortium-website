@@ -40,6 +40,10 @@ jobs:
       - name: Check generated website
         run: |
           test -s dist/index.html
+          test -s dist/news/index.html
+          grep -q 'meta http-equiv="refresh"' dist/news/index.html
+          grep -q 'TORCH Consortium homepage' dist/news/index.html
+          if grep -q '>News</a>' dist/index.html; then echo "News still appears in navigation"; exit 1; fi
           test -s dist/assets/site.css
           test -s dist/assets/documents/PARR-TB-Medical-Officers-Pamphlet.pdf
           test -s dist/branding/torch-horizontal.svg

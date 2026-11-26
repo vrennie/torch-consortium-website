@@ -112,6 +112,11 @@ if(domain)await copyFile('CNAME',join(output,'CNAME'));
 await writeFile(join(output,'.nojekyll'),'');
 for(const p of pages){
  if(p.draft)continue;
+ if(p.slug==='news'){
+  const destination=link('');
+  await save('news/index.html','<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="refresh" content="0;url='+destination+'"><link rel="canonical" href="'+destination+'"><title>TORCH Consortium</title></head><body><p>Visit the <a href="'+destination+'">TORCH Consortium homepage</a>.</p></body></html>');
+  continue;
+ }
  if(p.slug==='funding-1'){
   const destination=link('funding/');
   await save('funding-1/index.html','<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="refresh" content="0;url='+destination+'"><link rel="canonical" href="'+destination+'"><title>Funding | TORCH Consortium</title></head><body><p>This page has moved to <a href="'+destination+'">Funding</a>.</p></body></html>');

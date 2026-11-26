@@ -208,3 +208,9 @@
 
 /* ERC Horizon Europe funding acknowledgement: display EU and ERC identities together. */
 .prose .funding-logo img[src*="LOGO_ERC-FLAG_EU.png"]{display:block;width:min(100%,315px);height:auto;max-height:114px;object-fit:contain}
+
+/* Hash-filtered project views: the Past Projects menu link shows ONLY past items.
+   The unfiltered /projects/ page continues to show both groups. */
+body:has(#past-projects:target) #current-projects{display:none}
+body:has(#past-projects:target) #past-projects{margin-top:0}
+body:has(#current-projects:target) #past-projects{display:none}

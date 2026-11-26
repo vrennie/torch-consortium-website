@@ -45,6 +45,10 @@ jobs:
           test -s dist/branding/torch-horizontal.svg
           test -s dist/branding/torch-square.svg
           test -s dist/funding/index.html
+          # Projects sections must be separately addressable and non-overlapping.
+          grep -q 'id="current-projects"' dist/projects/index.html
+          grep -q 'id="past-projects"' dist/projects/index.html
+          node --input-type=module -e 'import {readFileSync} from "node:fs"; const html=readFileSync("dist/projects/index.html","utf8"); const current=html.split(/<section class="project-group" id="current-projects"/)[1]?.split(/<\/section>/)[0]||""; const past=html.split(/<section class="project-group" id="past-projects"/)[1]?.split(/<\/section>/)[0]||""; if(!current||!past) process.exit(1); const ids=["genpath-africa-parrtb","disrupt-rr-tb","new-page-2"]; if(ids.some(id=>past.includes("/"+id+"/"))) { console.error("Current project found in Past Projects"); process.exit(1); }'
           test -s dist/funding-1/index.html
           grep -q 'class="funding-grid"' dist/funding/index.html
           test -s dist/assets/media/find-logo.svg

@@ -180,8 +180,10 @@ for(const [slug,section,heading,sub] of [
  }
  if(slug==='projects'){
   const catalog=JSON.parse(await readFile('data/projects.json','utf8'));
-  const renderGroup=(title,ids)=>'<section class="project-group" aria-label="'+escape(title)+'"><h2>'+escape(title)+'</h2><div class="cards">'+ids.map(id=>bySlug.get(id)).filter(p=>p&&!p.draft).map(card).join('')+'</div></section>';
-  const content=renderGroup('Current Projects',catalog.current)+renderGroup('Past Projects',catalog.past);
+  const currentIds=new Set(catalog.current);
+  const pastIds=catalog.past.filter(id=>!currentIds.has(id));
+  const renderGroup=(title,anchor,ids)=>'<section class="project-group" id="'+anchor+'" aria-labelledby="'+anchor+'-title"><h2 id="'+anchor+'-title">'+escape(title)+'</h2><div class="cards">'+ids.map(id=>bySlug.get(id)).filter(p=>p&&!p.draft).map(card).join('')+'</div></section>';
+  const content=renderGroup('Current Projects','current-projects',catalog.current)+renderGroup('Past Projects','past-projects',pastIds);
   await save('projects/index.html',frame('Projects',banner('Projects','TORCH Consortium',sub)+'<div class="shell list-wrap">'+content+'</div>'));
   continue;
  }

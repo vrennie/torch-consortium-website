@@ -241,3 +241,12 @@ body:has(#current-projects:target) #past-projects{display:none}
 
 /* Keep publication category labels aligned without last-author badges. */
 .pub-feature-card-top{margin-bottom:14px}
+
+/* GenPath Africa objectives: four structured cards with clear visual hierarchy. */
+.genpath-goals{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin:26px 0 12px}
+.prose .genpath-goal-card{display:flex;flex-direction:column;min-width:0;padding:26px 27px 28px;border:1px solid #e2dde0;border-radius:14px;background:#fff;box-shadow:0 2px 12px #00000006}
+.genpath-goal-top{display:flex;justify-content:flex-start;margin-bottom:18px}
+.genpath-goal-number{display:flex;align-items:center;justify-content:center;width:45px;height:45px;border-radius:11px;background:#f8edf2;color:var(--brand);font:800 15px/1 Manrope,sans-serif}
+.prose .genpath-goal-card h3{font-size:1.18rem;line-height:1.35;letter-spacing:-.02em;margin:0 0 12px}
+.prose .genpath-goal-card p{font-size:.98rem;line-height:1.7;color:#555;margin:0}
+@media(max-width:720px){.genpath-goals{grid-template-columns:1fr;gap:13px}.prose .genpath-goal-card{padding:22px}.genpath-goal-top{margin-bottom:12px}}

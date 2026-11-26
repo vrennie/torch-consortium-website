@@ -30,10 +30,25 @@ At the heart of the GenPath Africa project is the groundbreaking application of 
 
 In its mission to advance the impact of genomic surveillance, GenPath Africa has strong partners by its side. It is one of six projects that were created to form a Genomic Epidemiology Network in Sub-Saharan Africa. Together, this powerful new partnership aims to:
 
-1.     Increase the use of genomic epidemiology across Africa to answer critical public health questions.
-
-2.     Create data platforms through which integrated epidemiologic, clinical, and genomic data can be collected and combined.
-
-3.     Implement selected pilot projects that apply genomic epidemiology to specific disease areas and use the results to inform public health decision-making and product development.
-
-4.     Establish a community of practice, training programmes, and fellowship opportunities in genomic epidemiology on the continent.
+<section class="genpath-goals" aria-label="GenPath Africa partnership objectives">
+  <article class="genpath-goal-card">
+    <div class="genpath-goal-top"><span class="genpath-goal-number" aria-hidden="true">01</span></div>
+    <h3>Broaden genomic epidemiology</h3>
+    <p>Increase the use of genomic epidemiology across Africa to answer critical public health questions.</p>
+  </article>
+  <article class="genpath-goal-card">
+    <div class="genpath-goal-top"><span class="genpath-goal-number" aria-hidden="true">02</span></div>
+    <h3>Connect research data</h3>
+    <p>Create data platforms through which integrated epidemiologic, clinical, and genomic data can be collected and combined.</p>
+  </article>
+  <article class="genpath-goal-card">
+    <div class="genpath-goal-top"><span class="genpath-goal-number" aria-hidden="true">03</span></div>
+    <h3>Put findings into practice</h3>
+    <p>Implement selected pilot projects that apply genomic epidemiology to specific disease areas and use the results to inform public health decision-making and product development.</p>
+  </article>
+  <article class="genpath-goal-card">
+    <div class="genpath-goal-top"><span class="genpath-goal-number" aria-hidden="true">04</span></div>
+    <h3>Grow African research capacity</h3>
+    <p>Establish a community of practice, training programmes, and fellowship opportunities in genomic epidemiology on the continent.</p>
+  </article>
+</section>

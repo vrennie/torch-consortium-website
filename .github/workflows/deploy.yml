@@ -46,6 +46,10 @@ jobs:
           if grep -q '>News</a>' dist/index.html; then echo "News still appears in navigation"; exit 1; fi
           test -s dist/assets/site.css
           test -s dist/publications/index.html
+          if grep -q 'Selected November 2026 to highlight key TORCH research' dist/publications/index.html; then echo 'Publication selection note remains'; exit 1; fi
+          test -s dist/genpath-africa-parrtb/index.html
+          test "$(grep -o 'class="genpath-goal-card"' dist/genpath-africa-parrtb/index.html | wc -l)" -eq 4
+          grep -q 'Establish a community of practice, training programmes, and fellowship opportunities' dist/genpath-africa-parrtb/index.html
           grep -q 'id="featured-papers-title"' dist/publications/index.html
           grep -q 'id="all-publications"' dist/publications/index.html
           test "$(grep -o 'class="pub-feature-card-top"' dist/publications/index.html | wc -l)" -eq 9

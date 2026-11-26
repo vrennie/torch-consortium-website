@@ -50,7 +50,7 @@ jobs:
           grep -q 'id="all-publications"' dist/publications/index.html
           test "$(grep -o 'pub-feature-card-top' dist/publications/index.html | wc -l)" -ge 12
           test "$(grep -o 'class="pub-feature-author-badge"' dist/publications/index.html | wc -l)" -eq 8
-          grep -q 'Eight papers with Prof. Annelies Van Rie as last author' dist/publications/index.html
+          grep -q 'Eight highlights with Prof. Annelies Van Rie as last author' dist/publications/index.html
           grep -q '10.1016/S2666-5247(21)00301-3' dist/publications/index.html
           grep -q 'Selected publications' dist/publications/index.html
           grep -q '10.1016/S2213-2600(26)00095-0' dist/publications/index.html

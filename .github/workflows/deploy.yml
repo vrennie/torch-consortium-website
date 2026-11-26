@@ -49,7 +49,8 @@ jobs:
           grep -q 'id="featured-papers-title"' dist/publications/index.html
           grep -q 'id="all-publications"' dist/publications/index.html
           test "$(grep -o 'class="pub-feature-card-top"' dist/publications/index.html | wc -l)" -eq 9
-          test "$(grep -o 'class="pub-feature-author-badge"' dist/publications/index.html | wc -l)" -eq 7
+          if grep -q 'pub-feature-author-badge' dist/publications/index.html; then echo "Last-author badges remain"; exit 1; fi
+          if grep -q 'Historical preprints and submissions' dist/publications/index.html; then echo "Historical preprints section remains"; exit 1; fi
           grep -q 'Nine selected TORCH research highlights' dist/publications/index.html
           if grep -q '<h1>Main Publications</h1>' dist/publications/index.html; then exit 1; fi
           grep -q 'Selected publications' dist/publications/index.html

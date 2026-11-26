@@ -47,14 +47,3 @@ Katende B, Esterhuizen TM, Dippenaar A, Warren RM. 2020. Rifampicin Resistant Tu
 
 Dippenaar A, De Vos M, Marx FM, Adroub SA, van Helden PD, Pain A, Sampson SL, Warren RM. 2019. Whole genome sequencing provides additional insights into recurrent tuberculosis classified as endogenous reactivation by IS6110 DNA fingerprinting. *Infection, Genetics and Evolution *2019; 75:103948.
 [https://doi.org/10.1016/j.meegid.2019.103948](https://doi.org/10.1016/j.meegid.2019.103948)
-
-## Historical preprints and submissions
-
-The following entries were listed in the original Output page. Publication status has not been re-verified; this section retains their historical status as recorded there.
-
-Carter J, Walker TM, Walker S, Whitfield M, Morlock GP,  Peto TEA,  Posey, JA , Crook DW,  Fowler FW. Prediction of pyrazinamide resistance in *Mycobacterium tuberculosis* using structure-based machine learning approaches. bioRxiv (pre-print server)
-[https://doi.org/10.1101/518142](https://doi.org/10.1101/518142)
-
-Heupink TH, Verboven L, Warren RM, Van Rie A. Comprehensive and accurate genetic variant identification from contaminated and low coverage *Mycobacterium tuberculosis* whole genome sequencing data. Submitted to *Microbial Genomics*
-
-Miguel de Diego Fuertes, Vincent Rennie, Lennert Verboven, Tafadzwa Maseko, Wilma Quispe Rojas, Anzaan Dippenaar, Tim H. Heupink, Annelies Van Rie. (2025). *The DREstimator – Automated Interpretation of Variants in Candidate Resistance Genes in Mycobacterium Tuberculosis to Move Whole Genome Sequencing Towards Clinical Actionability.* SSRN preprint. [https://doi.org/10.2139/ssrn.5702455](https://doi.org/10.2139/ssrn.5702455). IJTLD publication details have not yet been independently verified.

@@ -55,7 +55,13 @@ jobs:
           test "$(grep -o 'class="pub-feature-card-top"' dist/publications/index.html | wc -l)" -eq 9
           if grep -q 'pub-feature-author-badge' dist/publications/index.html; then echo "Last-author badges remain"; exit 1; fi
           if grep -q 'Historical preprints and submissions' dist/publications/index.html; then echo "Historical preprints section remains"; exit 1; fi
-          grep -q 'Nine selected TORCH research highlights' dist/publications/index.html
+          if grep -q 'Nine selected TORCH research highlights' dist/publications/index.html; then echo 'Removed publications intro remains'; exit 1; fi
+          test -s dist/mick-magma/index.html
+          test -s dist/new-page-2/index.html
+          grep -q 'content="0;url=/torch-consortium-website/mick-magma/"' dist/new-page-2/index.html
+          grep -q 'Actionable whole genome sequencing data' dist/mick-magma/index.html
+          grep -q 'Adaptable to different NGS data inputs' dist/mick-magma/index.html
+          grep -q 'Our partners' dist/mick-magma/index.html
           if grep -q '<h1>Main Publications</h1>' dist/publications/index.html; then exit 1; fi
           grep -q 'Selected publications' dist/publications/index.html
           grep -q '10.1016/S2213-2600(26)00095-0' dist/publications/index.html
@@ -70,7 +76,7 @@ jobs:
           grep -q 'id="past-projects"' dist/projects/index.html
           grep -Fq 'body:has(#past-projects:target) #current-projects{display:none}' dist/assets/site.css
           grep -Fq 'body:has(#current-projects:target) #past-projects{display:none}' dist/assets/site.css
-          node --input-type=module -e 'import {readFileSync} from "node:fs"; const html=readFileSync("dist/projects/index.html","utf8"); const current=html.split(/<section class="project-group" id="current-projects"/)[1]?.split(/<\/section>/)[0]||""; const past=html.split(/<section class="project-group" id="past-projects"/)[1]?.split(/<\/section>/)[0]||""; if(!current||!past) process.exit(1); const ids=["genpath-africa-parrtb","disrupt-rr-tb","new-page-2"]; if(ids.some(id=>past.includes("/"+id+"/"))) { console.error("Current project found in Past Projects"); process.exit(1); }'
+          node --input-type=module -e 'import {readFileSync} from "node:fs"; const html=readFileSync("dist/projects/index.html","utf8"); const current=html.split(/<section class="project-group" id="current-projects"/)[1]?.split(/<\/section>/)[0]||""; const past=html.split(/<section class="project-group" id="past-projects"/)[1]?.split(/<\/section>/)[0]||""; if(!current||!past) process.exit(1); const ids=["genpath-africa-parrtb","disrupt-rr-tb","mick-magma"]; if(ids.some(id=>!current.includes("/"+id+"/"))) { console.error("Missing current project"); process.exit(1); } if(ids.some(id=>past.includes("/"+id+"/"))) { console.error("Current project found in Past Projects"); process.exit(1); }'
           test -s dist/funding-1/index.html
           grep -q 'class="funding-grid"' dist/funding/index.html
           test -s dist/assets/media/find-logo.svg

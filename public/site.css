@@ -237,3 +237,9 @@ body:has(#current-projects:target) #past-projects{display:none}
 .pub-archive{padding-top:18px;border-top:1px solid #e9e5e7;scroll-margin-top:30px}
 @media(max-width:980px){.pub-feature-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:680px){.pub-feature-grid{grid-template-columns:1fr}.pub-featured-header{display:block}.prose .pub-archive-jump{margin-top:18px}.pub-feature-card{padding:20px}}
+
+/* Feature author contribution without implying authorship of the other four papers. */
+.pub-feature-card-top{display:flex;align-items:start;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+.pub-feature-card-top .pub-feature-topic{margin-bottom:0}
+.pub-feature-author-badge{border-radius:99px;background:#f8edf2;color:var(--brand);padding:5px 9px;font:800 10px/1.4 Manrope,sans-serif;white-space:nowrap}
+.pub-feature-last-author{border-color:#dcbccc}

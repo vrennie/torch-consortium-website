@@ -129,7 +129,7 @@ function featuredPublications(items){
  '<p>Nine selected TORCH research highlights, beginning with the SMARTT clinical trial, treatment recommender, DREstimator, MAGMA pipeline and Oxford Nanopore sequencing study.</p></div>'+
  '<a class="pub-archive-jump" href="#all-publications">Other publications ↓</a></div>'+
  '<div class="pub-feature-grid">'+cards+'</div>'+
- '<p class="pub-featured-method">Selected November 2026 to highlight key TORCH research, giving particular weight to Prof. Annelies Van Rie's scientific contributions. The DREstimator links to its verified SSRN manuscript while its IJTLD publication details await confirmation. Citation counts are indicative snapshots and may change. Additional older publications and historical preprints are below.</p>'+
+ '<p class="pub-featured-method">Selected November 2026 to highlight key TORCH research, giving particular weight to Prof. Annelies Van Rie’s scientific contributions. The DREstimator links to its verified SSRN manuscript while its IJTLD publication details await confirmation. Citation counts are indicative snapshots and may change. Additional older publications and historical preprints are below.</p>'+
  '</section>';
 }
 for(const p of pages){

@@ -92,6 +92,12 @@ draft: false
 
 ## Additional peer-reviewed articles
 
+### 2026 SMARTT trial results
+
+Van Rie A, Costa Conceição EC, Ndebele F, Wells F, Paulse A, et al. (2026). Whole genome sequencing precision medicine strategy to shorten treatment for rifampicin-resistant tuberculosis (SMARTT): a pragmatic, randomised, single-blind phase 4 trial. *The Lancet Respiratory Medicine* 14(6): 521–532. [https://doi.org/10.1016/S2213-2600(26)00095-0](https://doi.org/10.1016/S2213-2600(26)00095-0)
+
+
+
 The following articles were previously listed on the TORCH Output page and were not already present in the main publications list.
 
 ### 2021
@@ -144,3 +150,5 @@ Carter J, Walker TM, Walker S, Whitfield M, Morlock GP,  Peto TEA,  Posey, JA , 
 [https://doi.org/10.1101/518142](https://doi.org/10.1101/518142)
 
 Heupink TH, Verboven L, Warren RM, Van Rie A. Comprehensive and accurate genetic variant identification from contaminated and low coverage *Mycobacterium tuberculosis* whole genome sequencing data. Submitted to *Microbial Genomics*
+
+Miguel de Diego Fuertes, Vincent Rennie, Lennert Verboven, Tafadzwa Maseko, Wilma Quispe Rojas, Anzaan Dippenaar, Tim H. Heupink, Annelies Van Rie. (2025). *The DREstimator – Automated Interpretation of Variants in Candidate Resistance Genes in Mycobacterium Tuberculosis to Move Whole Genome Sequencing Towards Clinical Actionability.* SSRN preprint. [https://doi.org/10.2139/ssrn.5702455](https://doi.org/10.2139/ssrn.5702455). IJTLD publication details have not yet been independently verified.

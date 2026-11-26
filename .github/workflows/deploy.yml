@@ -53,6 +53,12 @@ jobs:
           grep -q 'Eight papers with Prof. Annelies Van Rie as last author' dist/publications/index.html
           grep -q '10.1016/S2666-5247(21)00301-3' dist/publications/index.html
           grep -q 'Selected publications' dist/publications/index.html
+          grep -q '10.1016/S2213-2600(26)00095-0' dist/publications/index.html
+          grep -q '10.2139/ssrn.5702455' dist/publications/index.html
+          grep -q 'SSRN manuscript' dist/publications/index.html
+          if grep -q 'Nanopore Sequencing for Mycobacterium tuberculosis: a Critical Review' dist/publications/index.html; then
+            echo "Old paper remains in full bibliography (expected); featured cards checked via source data."
+          fi
           test -s dist/assets/documents/PARR-TB-Medical-Officers-Pamphlet.pdf
           test -s dist/branding/torch-horizontal.svg
           test -s dist/branding/torch-square.svg

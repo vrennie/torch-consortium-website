@@ -1,14 +1,15 @@
 [
   {
-    "doi": "10.1128/JCM.00646-21",
-    "year": 2022,
-    "journal": "Journal of Clinical Microbiology",
-    "citations": 58,
-    "category": "Sequencing review",
-    "title": "Nanopore Sequencing for Mycobacterium tuberculosis: a Critical Review of the Literature, New Developments, and Future Opportunities",
-    "impact": "Reviews how nanopore sequencing could advance TB genomics and clinical applications.",
-    "openAlex": "W3169787953",
-    "vanRieLastAuthor": true
+    "doi": "10.2139/ssrn.5702455",
+    "year": 2025,
+    "journal": "SSRN manuscript · IJTLD details unverified",
+    "citations": null,
+    "category": "Resistance interpretation",
+    "title": "The DREstimator: automated interpretation of variants in candidate resistance genes in Mycobacterium tuberculosis",
+    "impact": "Extends WGS drug-resistance interpretation to variants not classified in the WHO catalogue, supporting actionable clinical results.",
+    "openAlex": null,
+    "vanRieLastAuthor": true,
+    "publicationStatus": "Preprint"
   },
   {
     "doi": "10.1093/bib/bbab541",
@@ -88,15 +89,16 @@
     "vanRieLastAuthor": true
   },
   {
-    "doi": "10.1016/S2666-5247(21)00301-3",
-    "year": 2022,
-    "journal": "The Lancet Microbe",
-    "citations": 300,
-    "category": "Drug-resistance catalogue",
-    "title": "The 2021 WHO catalogue of Mycobacterium tuberculosis complex mutations associated with drug resistance: a genotypic analysis",
-    "impact": "A widely cited foundation for interpreting resistance mutations in clinical sequencing.",
-    "openAlex": "W3210823154",
-    "vanRieLastAuthor": false
+    "doi": "10.1016/S2213-2600(26)00095-0",
+    "year": 2026,
+    "journal": "The Lancet Respiratory Medicine",
+    "citations": null,
+    "category": "Precision medicine · clinical trial",
+    "title": "Whole genome sequencing precision medicine strategy to shorten treatment for rifampicin-resistant tuberculosis (SMARTT): a pragmatic, randomised, single-blind phase 4 trial",
+    "impact": "Demonstrates WGS- and AI-guided treatment with shorter treatment duration and favourable clinical outcomes in RR-TB care.",
+    "openAlex": "W7154958500",
+    "vanRieLastAuthor": false,
+    "publicationStatus": "Peer reviewed"
   },
   {
     "doi": "10.1016/S2666-5247(23)00172-6",

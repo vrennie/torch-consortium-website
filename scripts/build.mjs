@@ -47,7 +47,7 @@ function fix(html){
 }
 const navHtml=nav.map(n=>n.items?'<details><summary>'+escape(n.label)+'</summary><div class="dropdown">'+(n.label==='Projects'||n.label==='About us'?'':'<a href="'+link(n.href)+'">Overview</a>')+n.items.map(c=>'<a href="'+link(c[1])+'">'+escape(c[0])+'</a>').join('')+'</div></details>':'<a href="'+link(n.href)+'">'+escape(n.label)+'</a>').join('');
 function frame(title,body){
- return '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+escape(title)+' | TORCH Consortium</title><meta name="description" content="Tuberculosis Omics ResearCH (TORCH) consortium"><link rel="icon" href="'+link('torch-lungs-favicon.svg')+'"><link rel="stylesheet" href="'+link('assets/site.css')+'?v=pub-last-author-20261126'+'"></head><body><a class="skip" href="#main">Skip to content</a><header><div class="shell head"><a class="brand" href="'+link('')+'" aria-label="TORCH Consortium home"><img class="brand-logo" src="'+link('branding/torch-horizontal.svg')+'" alt="TORCH — Tuberculosis Omics ResearCH"></a><nav>'+navHtml+'</nav></div></header><main id="main">'+body+'</main><footer class="site-footer"><div class="shell fine">© '+new Date().getUTCFullYear()+' TORCH Consortium</div></footer>'+''+'</body></html>';
+ return '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+escape(title)+' | TORCH Consortium</title><meta name="description" content="Tuberculosis Omics ResearCH (TORCH) consortium"><link rel="icon" href="'+link('torch-lungs-favicon.svg')+'"><link rel="stylesheet" href="'+link('assets/site.css')+'?v=smartt-drest-20261126'+'"></head><body><a class="skip" href="#main">Skip to content</a><header><div class="shell head"><a class="brand" href="'+link('')+'" aria-label="TORCH Consortium home"><img class="brand-logo" src="'+link('branding/torch-horizontal.svg')+'" alt="TORCH — Tuberculosis Omics ResearCH"></a><nav>'+navHtml+'</nav></div></header><main id="main">'+body+'</main><footer class="site-footer"><div class="shell fine">© '+new Date().getUTCFullYear()+' TORCH Consortium</div></footer>'+''+'</body></html>';
 }
 function banner(title,kicker,description=''){return '<section class="banner"><div class="shell"><div class="eyebrow">'+escape(kicker)+'</div><h1>'+escape(title)+'</h1>'+(description?'<p>'+escape(description)+'</p>':'')+'</div></section>'}
 function image(p){const x=p.content.match(/!\[[^\]]*\]\(([^)]+)\)/);return x?fix('<img src="'+escape(x[1])+'" alt="" loading="lazy">'):''}
@@ -119,17 +119,17 @@ function featuredPublications(items){
    '<h3><a href="'+paper+'" target="_blank" rel="noopener noreferrer">'+escape(item.title)+'</a></h3>'+
    '<div class="pub-feature-meta">'+escape(item.journal)+' <span aria-hidden="true">·</span> '+item.year+'</div>'+
    '<p class="pub-feature-insight">'+escape(item.impact)+'</p>'+
-   '<div class="pub-feature-bottom"><a class="pub-feature-citations" href="'+metrics+'" target="_blank" rel="noopener noreferrer" title="OpenAlex citation count for this publication">'+item.citations+' citations ↗</a>'+
+   '<div class="pub-feature-bottom">'+(item.openAlex?'<a class="pub-feature-citations" href="'+metrics+'" target="_blank" rel="noopener noreferrer" title="OpenAlex citation record">'+(Number.isFinite(item.citations)?item.citations+' citations':'Citation record')+' ↗</a>':'<span class="pub-feature-citations">'+escape(item.publicationStatus||'Research paper')+'</span>')+
    '<a class="pub-feature-read" href="'+paper+'" target="_blank" rel="noopener noreferrer">Read paper ↗</a></div>'+
    '</article>';
  }).join('');
  return '<section class="pub-featured" aria-labelledby="featured-papers-title">'+
  '<div class="pub-featured-header"><div><span class="pub-featured-kicker">TORCH RESEARCH HIGHLIGHTS</span>'+
  '<h2 id="featured-papers-title">Selected publications</h2>'+
- '<p>Eight papers with Prof. Annelies Van Rie as last author, complemented by four highly cited papers in leading journals. All 12 were published in journal issues from 2022 onward.</p></div>'+
+ '<p>Eight highlights with Prof. Annelies Van Rie as last author, including the DREstimator manuscript, plus four other major publications including the SMARTT clinical trial.</p></div>'+
  '<a class="pub-archive-jump" href="#all-publications">Browse all publications ↓</a></div>'+
  '<div class="pub-feature-grid">'+cards+'</div>'+
- '<p class="pub-featured-method">Selected November 2026, prioritising Van Rie as final author and then citations and journal standing. The two 2022 journal-issue papers on nanopore sequencing and minor variants were first available online in 2021; the selection uses their journal issue year. Citation figures reflect recorded OpenAlex snapshots and may change. The complete bibliography is below.</p>'+
+ '<p class="pub-featured-method">Selected November 2026, prioritising Van Rie as final author and then research significance, citations and journal standing. The DREstimator manuscript is linked to its verified SSRN preprint while its reported IJTLD publication details await confirmation. The 2022 minor-variant paper first appeared online in 2021. Citation counts are indicative OpenAlex snapshots. The complete bibliography remains below.</p>'+
  '</section>';
 }
 for(const p of pages){

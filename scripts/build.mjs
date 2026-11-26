@@ -47,7 +47,7 @@ function fix(html){
 }
 const navHtml=nav.map(n=>n.items?'<details><summary>'+escape(n.label)+'</summary><div class="dropdown">'+(n.label==='Projects'||n.label==='About us'?'':'<a href="'+link(n.href)+'">Overview</a>')+n.items.map(c=>'<a href="'+link(c[1])+'">'+escape(c[0])+'</a>').join('')+'</div></details>':'<a href="'+link(n.href)+'">'+escape(n.label)+'</a>').join('');
 function frame(title,body){
- return '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+escape(title)+' | TORCH Consortium</title><meta name="description" content="Tuberculosis Omics ResearCH (TORCH) consortium"><link rel="icon" href="'+link('torch-lungs-favicon.svg')+'"><link rel="stylesheet" href="'+link('assets/site.css')+'?v=smartt-drest-20261126'+'"></head><body><a class="skip" href="#main">Skip to content</a><header><div class="shell head"><a class="brand" href="'+link('')+'" aria-label="TORCH Consortium home"><img class="brand-logo" src="'+link('branding/torch-horizontal.svg')+'" alt="TORCH — Tuberculosis Omics ResearCH"></a><nav>'+navHtml+'</nav></div></header><main id="main">'+body+'</main><footer class="site-footer"><div class="shell fine">© '+new Date().getUTCFullYear()+' TORCH Consortium</div></footer>'+''+'</body></html>';
+ return '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+escape(title)+' | TORCH Consortium</title><meta name="description" content="Tuberculosis Omics ResearCH (TORCH) consortium"><link rel="icon" href="'+link('torch-lungs-favicon.svg')+'"><link rel="stylesheet" href="'+link('assets/site.css')+'?v=pub-nine-ordered-20261126'+'"></head><body><a class="skip" href="#main">Skip to content</a><header><div class="shell head"><a class="brand" href="'+link('')+'" aria-label="TORCH Consortium home"><img class="brand-logo" src="'+link('branding/torch-horizontal.svg')+'" alt="TORCH — Tuberculosis Omics ResearCH"></a><nav>'+navHtml+'</nav></div></header><main id="main">'+body+'</main><footer class="site-footer"><div class="shell fine">© '+new Date().getUTCFullYear()+' TORCH Consortium</div></footer>'+''+'</body></html>';
 }
 function banner(title,kicker,description=''){return '<section class="banner"><div class="shell"><div class="eyebrow">'+escape(kicker)+'</div><h1>'+escape(title)+'</h1>'+(description?'<p>'+escape(description)+'</p>':'')+'</div></section>'}
 function image(p){const x=p.content.match(/!\[[^\]]*\]\(([^)]+)\)/);return x?fix('<img src="'+escape(x[1])+'" alt="" loading="lazy">'):''}
@@ -126,10 +126,10 @@ function featuredPublications(items){
  return '<section class="pub-featured" aria-labelledby="featured-papers-title">'+
  '<div class="pub-featured-header"><div><span class="pub-featured-kicker">TORCH RESEARCH HIGHLIGHTS</span>'+
  '<h2 id="featured-papers-title">Selected publications</h2>'+
- '<p>Eight highlights with Prof. Annelies Van Rie as last author, including the DREstimator manuscript, plus four other major publications including the SMARTT clinical trial.</p></div>'+
- '<a class="pub-archive-jump" href="#all-publications">Browse all publications ↓</a></div>'+
+ '<p>Nine selected TORCH research highlights, beginning with the SMARTT clinical trial, treatment recommender, DREstimator, MAGMA pipeline and Oxford Nanopore sequencing study.</p></div>'+
+ '<a class="pub-archive-jump" href="#all-publications">Other publications ↓</a></div>'+
  '<div class="pub-feature-grid">'+cards+'</div>'+
- '<p class="pub-featured-method">Selected November 2026, prioritising Van Rie as final author and then research significance, citations and journal standing. The DREstimator manuscript is linked to its verified SSRN preprint while its reported IJTLD publication details await confirmation. The 2022 minor-variant paper first appeared online in 2021. Citation counts are indicative OpenAlex snapshots. The complete bibliography remains below.</p>'+
+ '<p class="pub-featured-method">Selected November 2026 to highlight key TORCH research, giving particular weight to Prof. Annelies Van Rie's scientific contributions. The DREstimator links to its verified SSRN manuscript while its IJTLD publication details await confirmation. Citation counts are indicative snapshots and may change. Additional older publications and historical preprints are below.</p>'+
  '</section>';
 }
 for(const p of pages){
@@ -153,12 +153,11 @@ for(const p of pages){
  if(p.slug==='parrtb-intro')content=content.replace(/<p>\s*\[\[PARR_TB_BOOKLET\]\]\s*<\/p>/,renderBooklet());
  if(p.slug==='publications'){
   const selected=JSON.parse(await readFile('data/featured-publications.json','utf8'));
-  if(selected.length!==12)throw Error('Expected 12 featured publications');
+  if(selected.length!==9)throw Error('Expected 9 featured publications');
   const identifiers=new Set();
   for(const item of selected){
    if(item.year<2022||item.year>2026)throw Error('Featured paper outside five-year publication window: '+item.doi);
    if(identifiers.has(item.doi))throw Error('Duplicate featured DOI: '+item.doi);
-   if(!p.content.toLowerCase().includes(item.doi.toLowerCase()))throw Error('Featured paper missing from archive: '+item.doi);
    identifiers.add(item.doi);
   }
   content=featuredPublications(selected)+'<section id="all-publications" class="pub-archive" aria-label="Complete TORCH publication bibliography">'+content+'</section>';

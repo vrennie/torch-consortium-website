@@ -48,17 +48,14 @@ jobs:
           test -s dist/publications/index.html
           grep -q 'id="featured-papers-title"' dist/publications/index.html
           grep -q 'id="all-publications"' dist/publications/index.html
-          test "$(grep -o 'pub-feature-card-top' dist/publications/index.html | wc -l)" -ge 12
-          test "$(grep -o 'class="pub-feature-author-badge"' dist/publications/index.html | wc -l)" -eq 8
-          grep -q 'Eight highlights with Prof. Annelies Van Rie as last author' dist/publications/index.html
-          grep -q '10.1016/S2666-5247(21)00301-3' dist/publications/index.html
+          test "$(grep -o 'class="pub-feature-card-top"' dist/publications/index.html | wc -l)" -eq 9
+          test "$(grep -o 'class="pub-feature-author-badge"' dist/publications/index.html | wc -l)" -eq 7
+          grep -q 'Nine selected TORCH research highlights' dist/publications/index.html
+          if grep -q '<h1>Main Publications</h1>' dist/publications/index.html; then exit 1; fi
           grep -q 'Selected publications' dist/publications/index.html
           grep -q '10.1016/S2213-2600(26)00095-0' dist/publications/index.html
           grep -q '10.2139/ssrn.5702455' dist/publications/index.html
           grep -q 'SSRN manuscript' dist/publications/index.html
-          if grep -q 'Nanopore Sequencing for Mycobacterium tuberculosis: a Critical Review' dist/publications/index.html; then
-            echo "Old paper remains in full bibliography (expected); featured cards checked via source data."
-          fi
           test -s dist/assets/documents/PARR-TB-Medical-Officers-Pamphlet.pdf
           test -s dist/branding/torch-horizontal.svg
           test -s dist/branding/torch-square.svg
@@ -108,7 +105,7 @@ jobs:
           test "$(grep -o 'class="vision-priority"' dist/focus-area/index.html | wc -l)" -eq 5
           ! grep -q 'vision-mission-number' dist/focus-area/index.html
           grep -q 'vision-mission-icon-wrap' dist/assets/site.css
-          grep -q 'Additional peer-reviewed articles' dist/publications/index.html
+          grep -q 'Other peer-reviewed publications' dist/publications/index.html
           grep -q '10.5588/ijtld.20.0886' dist/publications/index.html
           grep -q '10.1016/j.meegid.2019.103948' dist/publications/index.html
           grep -q 'content="0;url=/torch-consortium-website/publications/"' dist/output/index.html

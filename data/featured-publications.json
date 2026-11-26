@@ -1,37 +1,15 @@
 [
   {
-    "doi": "10.2139/ssrn.5702455",
-    "year": 2025,
-    "journal": "SSRN manuscript · IJTLD details unverified",
+    "doi": "10.1016/S2213-2600(26)00095-0",
+    "year": 2026,
+    "journal": "The Lancet Respiratory Medicine",
     "citations": null,
-    "category": "Resistance interpretation",
-    "title": "The DREstimator: automated interpretation of variants in candidate resistance genes in Mycobacterium tuberculosis",
-    "impact": "Extends WGS drug-resistance interpretation to variants not classified in the WHO catalogue, supporting actionable clinical results.",
-    "openAlex": null,
-    "vanRieLastAuthor": true,
-    "publicationStatus": "Preprint"
-  },
-  {
-    "doi": "10.1093/bib/bbab541",
-    "year": 2022,
-    "journal": "Briefings in Bioinformatics",
-    "citations": 19,
-    "category": "Minor variant detection",
-    "title": "Detection of minor variants in Mycobacterium tuberculosis whole genome sequencing data",
-    "impact": "Evaluates reliable detection of low-frequency variants in clinical TB sequencing data.",
-    "openAlex": "W4200603117",
-    "vanRieLastAuthor": true
-  },
-  {
-    "doi": "10.1128/spectrum.01114-23",
-    "year": 2023,
-    "journal": "Microbiology Spectrum",
-    "citations": 29,
-    "category": "Direct-from-sample WGS",
-    "title": "Microfluidic Capture of Mycobacterium tuberculosis from Clinical Samples for Culture-Free Whole-Genome Sequencing",
-    "impact": "Demonstrates microfluidic cell capture as an approach to culture-free TB whole-genome sequencing.",
-    "openAlex": "W4382010938",
-    "vanRieLastAuthor": true
+    "category": "Precision medicine · clinical trial",
+    "title": "Whole genome sequencing precision medicine strategy to shorten treatment for rifampicin-resistant tuberculosis (SMARTT): a pragmatic, randomised, single-blind phase 4 trial",
+    "impact": "Demonstrates WGS- and AI-guided treatment with shorter treatment duration and favourable clinical outcomes in RR-TB care.",
+    "openAlex": "W7154958500",
+    "vanRieLastAuthor": false,
+    "publicationStatus": "Peer reviewed"
   },
   {
     "doi": "10.1186/s12911-022-01790-0",
@@ -45,6 +23,18 @@
     "vanRieLastAuthor": true
   },
   {
+    "doi": "10.2139/ssrn.5702455",
+    "year": 2025,
+    "journal": "SSRN manuscript · IJTLD details unverified",
+    "citations": null,
+    "category": "Resistance interpretation",
+    "title": "The DREstimator: automated interpretation of variants in candidate resistance genes in Mycobacterium tuberculosis",
+    "impact": "Extends WGS drug-resistance interpretation to variants not classified in the WHO catalogue, supporting actionable clinical results.",
+    "openAlex": null,
+    "vanRieLastAuthor": true,
+    "publicationStatus": "Preprint"
+  },
+  {
     "doi": "10.1371/journal.pcbi.1011648",
     "year": 2023,
     "journal": "PLoS Computational Biology",
@@ -53,28 +43,6 @@
     "title": "The MAGMA pipeline for comprehensive genomic analyses of clinical Mycobacterium tuberculosis samples",
     "impact": "Introduces the MAGMA analysis pipeline for comprehensive TB whole-genome sequencing.",
     "openAlex": "W4389131331",
-    "vanRieLastAuthor": true
-  },
-  {
-    "doi": "10.1128/aac.00322-22",
-    "year": 2022,
-    "journal": "Antimicrobial Agents and Chemotherapy",
-    "citations": 15,
-    "category": "Bedaquiline resistance",
-    "title": "Variants in Bedaquiline-Candidate-Resistance Genes: Prevalence in Bedaquiline-Naive Patients, Effect on MIC, and Association with Mycobacterium tuberculosis Lineage",
-    "impact": "Tests how candidate resistance variants relate to minimum inhibitory concentrations.",
-    "openAlex": "W4283592223",
-    "vanRieLastAuthor": true
-  },
-  {
-    "doi": "10.1099/mgen.0.000815",
-    "year": 2022,
-    "journal": "Microbial Genomics",
-    "citations": 14,
-    "category": "Genomic epidemiology",
-    "title": "Transmission, distribution and drug resistance-conferring mutations of extensively drug-resistant tuberculosis in the Western Cape Province",
-    "impact": "Uses WGS to investigate the geographic spread and evolution of XDR-TB.",
-    "openAlex": "W4224950071",
     "vanRieLastAuthor": true
   },
   {
@@ -89,16 +57,37 @@
     "vanRieLastAuthor": true
   },
   {
-    "doi": "10.1016/S2213-2600(26)00095-0",
-    "year": 2026,
-    "journal": "The Lancet Respiratory Medicine",
-    "citations": null,
-    "category": "Precision medicine · clinical trial",
-    "title": "Whole genome sequencing precision medicine strategy to shorten treatment for rifampicin-resistant tuberculosis (SMARTT): a pragmatic, randomised, single-blind phase 4 trial",
-    "impact": "Demonstrates WGS- and AI-guided treatment with shorter treatment duration and favourable clinical outcomes in RR-TB care.",
-    "openAlex": "W7154958500",
-    "vanRieLastAuthor": false,
-    "publicationStatus": "Peer reviewed"
+    "doi": "10.1128/spectrum.01114-23",
+    "year": 2023,
+    "journal": "Microbiology Spectrum",
+    "citations": 29,
+    "category": "Direct-from-sample WGS",
+    "title": "Microfluidic Capture of Mycobacterium tuberculosis from Clinical Samples for Culture-Free Whole-Genome Sequencing",
+    "impact": "Demonstrates microfluidic cell capture as an approach to culture-free TB whole-genome sequencing.",
+    "openAlex": "W4382010938",
+    "vanRieLastAuthor": true
+  },
+  {
+    "doi": "10.1093/bib/bbab541",
+    "year": 2022,
+    "journal": "Briefings in Bioinformatics",
+    "citations": 19,
+    "category": "Minor variant detection",
+    "title": "Detection of minor variants in Mycobacterium tuberculosis whole genome sequencing data",
+    "impact": "Evaluates reliable detection of low-frequency variants in clinical TB sequencing data.",
+    "openAlex": "W4200603117",
+    "vanRieLastAuthor": true
+  },
+  {
+    "doi": "10.1128/aac.00322-22",
+    "year": 2022,
+    "journal": "Antimicrobial Agents and Chemotherapy",
+    "citations": 15,
+    "category": "Bedaquiline resistance",
+    "title": "Variants in Bedaquiline-Candidate-Resistance Genes: Prevalence in Bedaquiline-Naive Patients, Effect on MIC, and Association with Mycobacterium tuberculosis Lineage",
+    "impact": "Tests how candidate resistance variants relate to minimum inhibitory concentrations.",
+    "openAlex": "W4283592223",
+    "vanRieLastAuthor": true
   },
   {
     "doi": "10.1016/S2666-5247(23)00172-6",
@@ -109,28 +98,6 @@
     "title": "Bedaquiline resistance in patients with drug-resistant tuberculosis in Cape Town, South Africa",
     "impact": "Documents acquired and transmitted bedaquiline resistance in patients receiving programmatic care.",
     "openAlex": "W4388278661",
-    "vanRieLastAuthor": false
-  },
-  {
-    "doi": "10.1016/S2666-5247(23)00002-2",
-    "year": 2023,
-    "journal": "The Lancet Microbe",
-    "citations": 78,
-    "category": "Drug susceptibility",
-    "title": "Bedaquiline and clofazimine resistance in Mycobacterium tuberculosis: an in-vitro and in-silico data analysis",
-    "impact": "Links genomic and phenotypic evidence for two essential drug-resistant TB medicines.",
-    "openAlex": "W4361195623",
-    "vanRieLastAuthor": false
-  },
-  {
-    "doi": "10.1038/s41467-023-44325-5",
-    "year": 2024,
-    "journal": "Nature Communications",
-    "citations": 45,
-    "category": "Genomic resistance prediction",
-    "title": "Quantitative measurement of antibiotic resistance in Mycobacterium tuberculosis reveals genetic determinants of resistance and susceptibility in a target gene approach",
-    "impact": "Uses quantitative phenotypes to refine how resistance-associated mutations are interpreted.",
-    "openAlex": "W4390790879",
     "vanRieLastAuthor": false
   }
 ]

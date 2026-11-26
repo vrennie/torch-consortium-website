@@ -45,6 +45,12 @@ jobs:
           grep -q 'TORCH Consortium homepage' dist/news/index.html
           if grep -q '>News</a>' dist/index.html; then echo "News still appears in navigation"; exit 1; fi
           test -s dist/assets/site.css
+          test -s dist/publications/index.html
+          grep -q 'id="featured-papers-title"' dist/publications/index.html
+          grep -q 'id="all-publications"' dist/publications/index.html
+          test "$(grep -o 'class="pub-feature-card"' dist/publications/index.html | wc -l)" -eq 12
+          grep -q '10.1016/S2666-5247(21)00301-3' dist/publications/index.html
+          grep -q 'Selected publications' dist/publications/index.html
           test -s dist/assets/documents/PARR-TB-Medical-Officers-Pamphlet.pdf
           test -s dist/branding/torch-horizontal.svg
           test -s dist/branding/torch-square.svg

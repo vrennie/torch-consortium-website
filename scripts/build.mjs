@@ -47,7 +47,7 @@ function fix(html){
 }
 const navHtml=nav.map(n=>n.items?'<details><summary>'+escape(n.label)+'</summary><div class="dropdown">'+(n.label==='Projects'||n.label==='About us'?'':'<a href="'+link(n.href)+'">Overview</a>')+n.items.map(c=>'<a href="'+link(c[1])+'">'+escape(c[0])+'</a>').join('')+'</div></details>':'<a href="'+link(n.href)+'">'+escape(n.label)+'</a>').join('');
 function frame(title,body){
- return '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+escape(title)+' | TORCH Consortium</title><meta name="description" content="Tuberculosis Omics ResearCH (TORCH) consortium"><link rel="icon" href="'+link('torch-lungs-favicon.svg')+'"><link rel="stylesheet" href="'+link('assets/site.css')+'?v=project-filter-20261126'+'"></head><body><a class="skip" href="#main">Skip to content</a><header><div class="shell head"><a class="brand" href="'+link('')+'" aria-label="TORCH Consortium home"><img class="brand-logo" src="'+link('branding/torch-horizontal.svg')+'" alt="TORCH — Tuberculosis Omics ResearCH"></a><nav>'+navHtml+'</nav></div></header><main id="main">'+body+'</main><footer class="site-footer"><div class="shell fine">© '+new Date().getUTCFullYear()+' TORCH Consortium</div></footer>'+''+'</body></html>';
+ return '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+escape(title)+' | TORCH Consortium</title><meta name="description" content="Tuberculosis Omics ResearCH (TORCH) consortium"><link rel="icon" href="'+link('torch-lungs-favicon.svg')+'"><link rel="stylesheet" href="'+link('assets/site.css')+'?v=featured-papers-20261126'+'"></head><body><a class="skip" href="#main">Skip to content</a><header><div class="shell head"><a class="brand" href="'+link('')+'" aria-label="TORCH Consortium home"><img class="brand-logo" src="'+link('branding/torch-horizontal.svg')+'" alt="TORCH — Tuberculosis Omics ResearCH"></a><nav>'+navHtml+'</nav></div></header><main id="main">'+body+'</main><footer class="site-footer"><div class="shell fine">© '+new Date().getUTCFullYear()+' TORCH Consortium</div></footer>'+''+'</body></html>';
 }
 function banner(title,kicker,description=''){return '<section class="banner"><div class="shell"><div class="eyebrow">'+escape(kicker)+'</div><h1>'+escape(title)+'</h1>'+(description?'<p>'+escape(description)+'</p>':'')+'</div></section>'}
 function image(p){const x=p.content.match(/!\[[^\]]*\]\(([^)]+)\)/);return x?fix('<img src="'+escape(x[1])+'" alt="" loading="lazy">'):''}
@@ -110,6 +110,28 @@ if(existsSync('public/assets/media'))await cp('public/assets/media',join(output,
 if(existsSync('public/assets/documents'))await cp('public/assets/documents',join(output,'assets','documents'),{recursive:true});
 if(domain)await copyFile('CNAME',join(output,'CNAME'));
 await writeFile(join(output,'.nojekyll'),'');
+function featuredPublications(items){
+ const cards=items.map(item=>{
+  const paper='https://doi.org/'+encodeURI(item.doi);
+  const metrics='https://openalex.org/'+item.openAlex;
+  return '<article class="pub-feature-card">'+
+   '<div class="pub-feature-topic">'+escape(item.category)+'</div>'+
+   '<h3><a href="'+paper+'" target="_blank" rel="noopener noreferrer">'+escape(item.title)+'</a></h3>'+
+   '<div class="pub-feature-meta">'+escape(item.journal)+' <span aria-hidden="true">·</span> '+item.year+'</div>'+
+   '<p class="pub-feature-insight">'+escape(item.impact)+'</p>'+
+   '<div class="pub-feature-bottom"><a class="pub-feature-citations" href="'+metrics+'" target="_blank" rel="noopener noreferrer" title="OpenAlex citation count for this publication">'+item.citations+' citations ↗</a>'+
+   '<a class="pub-feature-read" href="'+paper+'" target="_blank" rel="noopener noreferrer">Read paper ↗</a></div>'+
+   '</article>';
+ }).join('');
+ return '<section class="pub-featured" aria-labelledby="featured-papers-title">'+
+ '<div class="pub-featured-header"><div><span class="pub-featured-kicker">TORCH RESEARCH HIGHLIGHTS</span>'+
+ '<h2 id="featured-papers-title">Selected publications</h2>'+
+ '<p>12 peer-reviewed papers published from 2022 onward, chosen using citation impact and the standing of their journals, while reflecting TORCH research areas.</p></div>'+
+ '<a class="pub-archive-jump" href="#all-publications">Browse all publications ↓</a></div>'+
+ '<div class="pub-feature-grid">'+cards+'</div>'+
+ '<p class="pub-featured-method">Selection reviewed November 2026. Citation counts are indicative OpenAlex indexed totals at review time and will change. Journal reputation and impact-factor standing informed curation; papers are not ranked by journal impact factor alone. Highlights are not an exhaustive list.</p>'+
+ '</section>';
+}
 for(const p of pages){
  if(p.draft)continue;
  if(p.slug==='news'){
@@ -129,6 +151,19 @@ for(const p of pages){
  }
  let content=fix(marked.parse(p.content,{gfm:true}));
  if(p.slug==='parrtb-intro')content=content.replace(/<p>\s*\[\[PARR_TB_BOOKLET\]\]\s*<\/p>/,renderBooklet());
+ if(p.slug==='publications'){
+  const selected=JSON.parse(await readFile('data/featured-publications.json','utf8'));
+  if(selected.length!==12)throw Error('Expected 12 featured publications');
+  const identifiers=new Set();
+  for(const item of selected){
+   if(item.year<2022||item.year>2026)throw Error('Featured paper outside five-year publication window: '+item.doi);
+   if(identifiers.has(item.doi))throw Error('Duplicate featured DOI: '+item.doi);
+   if(!p.content.toLowerCase().includes(item.doi.toLowerCase()))throw Error('Featured paper missing from archive: '+item.doi);
+   identifiers.add(item.doi);
+  }
+  content=featuredPublications(selected)+'<section id="all-publications" class="pub-archive" aria-label="Complete TORCH publication bibliography">'+content+'</section>';
+ }
+
  const initial=content.match(/^<h1[^>]*>([\s\S]*?)<\/h1>\s*/i);
  if(initial&&initial[1].replace(/<[^>]*>/g,'').trim().toLowerCase()===p.title.toLowerCase())content=content.slice(initial[0].length);
  await save(p.slug+'/index.html',frame(p.title,banner(p.title,p.section)+'<div class="shell body-wrap"><article class="prose">'+content+'</article></div>'));

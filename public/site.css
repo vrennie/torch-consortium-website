@@ -214,3 +214,26 @@
 body:has(#past-projects:target) #current-projects{display:none}
 body:has(#past-projects:target) #past-projects{margin-top:0}
 body:has(#current-projects:target) #past-projects{display:none}
+
+/* Selected publications: curated 12-paper showcase preceding the original bibliography. */
+.pub-featured{margin-bottom:48px}
+.pub-featured-header{display:flex;align-items:flex-end;justify-content:space-between;gap:28px;margin-bottom:25px}
+.pub-featured-kicker{font:800 11px/1.3 Manrope,sans-serif;letter-spacing:.17em;color:var(--brand)}
+.prose .pub-featured-header h2{margin:8px 0 12px;font-size:clamp(1.8rem,2.8vw,2.5rem);letter-spacing:-.025em}
+.prose .pub-featured-header p{font-size:1rem;line-height:1.6;max-width:760px;color:#555;margin:0}
+.prose .pub-archive-jump{white-space:nowrap;display:inline-block;text-decoration:none;border:1px solid #ded5d8;border-radius:8px;padding:12px 16px;font-weight:700;font-size:13px;background:#fff}
+.pub-feature-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}
+.pub-feature-card{display:flex;flex-direction:column;align-items:stretch;min-width:0;border:1px solid #e1dbdf;border-radius:13px;padding:22px 21px 20px;background:#fff;box-shadow:0 2px 11px #00000005}
+.pub-feature-topic{font:800 10px/1.4 Manrope,sans-serif;text-transform:uppercase;letter-spacing:.13em;color:var(--brand);margin-bottom:14px}
+.prose .pub-feature-card h3{font:800 1.07rem/1.45 Manrope,sans-serif;letter-spacing:-.016em;margin:0 0 13px}
+.prose .pub-feature-card h3 a{text-decoration:none;color:#171717}
+.prose .pub-feature-card h3 a:hover{color:var(--brand)}
+.pub-feature-meta{font-size:.82rem;color:#777;line-height:1.45;margin-bottom:15px}
+.prose .pub-feature-card .pub-feature-insight{font-size:.9rem;line-height:1.6;color:#515151;margin:0 0 21px}
+.pub-feature-bottom{border-top:1px solid #eee;padding-top:14px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px;margin-top:auto;font-size:.78rem}
+.prose .pub-feature-bottom a{text-decoration:none;font-weight:700}
+.prose .pub-feature-bottom .pub-feature-citations{color:#6c6770;font-weight:500}
+.prose .pub-featured-method{font-size:.79rem;color:#686868;line-height:1.65;margin:18px 0 0}
+.pub-archive{padding-top:18px;border-top:1px solid #e9e5e7;scroll-margin-top:30px}
+@media(max-width:980px){.pub-feature-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:680px){.pub-feature-grid{grid-template-columns:1fr}.pub-featured-header{display:block}.prose .pub-archive-jump{margin-top:18px}.pub-feature-card{padding:20px}}

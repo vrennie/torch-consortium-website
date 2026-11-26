@@ -1,0 +1,122 @@
+[
+  {
+    "doi": "10.1016/S2666-5247(21)00301-3",
+    "year": 2022,
+    "journal": "The Lancet Microbe",
+    "citations": 300,
+    "category": "Drug-resistance catalogue",
+    "title": "The 2021 WHO catalogue of Mycobacterium tuberculosis complex mutations associated with drug resistance: a genotypic analysis",
+    "impact": "A widely cited foundation for interpreting resistance mutations in clinical sequencing.",
+    "openAlex": "W3210823154"
+  },
+  {
+    "doi": "10.1016/S2666-5247(23)00172-6",
+    "year": 2023,
+    "journal": "The Lancet Microbe",
+    "citations": 101,
+    "category": "Bedaquiline resistance",
+    "title": "Bedaquiline resistance in patients with drug-resistant tuberculosis in Cape Town, South Africa",
+    "impact": "Documents acquired and transmitted bedaquiline resistance in patients receiving programmatic care.",
+    "openAlex": "W4388278661"
+  },
+  {
+    "doi": "10.1016/S2666-5247(23)00002-2",
+    "year": 2023,
+    "journal": "The Lancet Microbe",
+    "citations": 78,
+    "category": "Drug susceptibility",
+    "title": "Bedaquiline and clofazimine resistance in Mycobacterium tuberculosis: an in-vitro and in-silico data analysis",
+    "impact": "Links genomic and phenotypic evidence for two essential drug-resistant TB medicines.",
+    "openAlex": "W4361195623"
+  },
+  {
+    "doi": "10.1186/s13073-022-01076-0",
+    "year": 2022,
+    "journal": "Genome Medicine",
+    "citations": 48,
+    "category": "Transmission epidemiology",
+    "title": "High fluoroquinolone resistance proportions among multidrug-resistant tuberculosis driven by dominant L2 Mycobacterium tuberculosis clones in the Mumbai Metropolitan Region",
+    "impact": "Connects genomic transmission patterns to the spread of fluoroquinolone resistance.",
+    "openAlex": "W4294334402"
+  },
+  {
+    "doi": "10.1038/s41467-023-44325-5",
+    "year": 2024,
+    "journal": "Nature Communications",
+    "citations": 45,
+    "category": "Genomic resistance prediction",
+    "title": "Quantitative measurement of antibiotic resistance in Mycobacterium tuberculosis reveals genetic determinants of resistance and susceptibility in a target gene approach",
+    "impact": "Uses quantitative phenotypes to refine how resistance-associated mutations are interpreted.",
+    "openAlex": "W4390790879"
+  },
+  {
+    "doi": "10.1186/s12911-022-01790-0",
+    "year": 2022,
+    "journal": "BMC Medical Informatics and Decision Making",
+    "citations": 27,
+    "category": "Precision medicine",
+    "title": "A treatment recommender clinical decision support system for personalized medicine",
+    "impact": "Develops a computational framework for recommending individualized drug-resistant TB treatments.",
+    "openAlex": "W4220930107"
+  },
+  {
+    "doi": "10.1371/journal.pcbi.1011648",
+    "year": 2023,
+    "journal": "PLoS Computational Biology",
+    "citations": 21,
+    "category": "Bioinformatics",
+    "title": "The MAGMA pipeline for comprehensive genomic analyses of clinical Mycobacterium tuberculosis samples",
+    "impact": "Introduces the MAGMA analysis pipeline for comprehensive TB whole-genome sequencing.",
+    "openAlex": "W4389131331"
+  },
+  {
+    "doi": "10.1186/s13063-022-06793-w",
+    "year": 2022,
+    "journal": "Trials",
+    "citations": 15,
+    "category": "Clinical trials",
+    "title": "Sequencing Mycobacteria and Algorithm-determined Resistant Tuberculosis Treatment (SMARTT): a study protocol",
+    "impact": "Describes a pragmatic trial of WGS-informed management of rifampicin-resistant TB.",
+    "openAlex": "W4303684296"
+  },
+  {
+    "doi": "10.1128/aac.00322-22",
+    "year": 2022,
+    "journal": "Antimicrobial Agents and Chemotherapy",
+    "citations": 15,
+    "category": "Bedaquiline resistance",
+    "title": "Variants in Bedaquiline-Candidate-Resistance Genes: Prevalence in Bedaquiline-Naive Patients, Effect on MIC, and Association with Mycobacterium tuberculosis Lineage",
+    "impact": "Tests how candidate resistance variants relate to minimum inhibitory concentrations.",
+    "openAlex": "W4283592223"
+  },
+  {
+    "doi": "10.1099/mgen.0.000815",
+    "year": 2022,
+    "journal": "Microbial Genomics",
+    "citations": 14,
+    "category": "Genomic epidemiology",
+    "title": "Transmission, distribution and drug resistance-conferring mutations of extensively drug-resistant tuberculosis in the Western Cape Province",
+    "impact": "Uses WGS to investigate the geographic spread and evolution of XDR-TB.",
+    "openAlex": "W4224950071"
+  },
+  {
+    "doi": "10.1371/journal.pcbi.1012260",
+    "year": 2024,
+    "journal": "PLoS Computational Biology",
+    "citations": 7,
+    "category": "Machine learning",
+    "title": "Quantitative drug susceptibility testing for Mycobacterium tuberculosis using unassembled sequencing data and machine learning",
+    "impact": "Explores quantitative susceptibility prediction directly from sequencing data.",
+    "openAlex": "W4401328428"
+  },
+  {
+    "doi": "10.1371/journal.pone.0303938",
+    "year": 2024,
+    "journal": "PLoS ONE",
+    "citations": 7,
+    "category": "Sequencing technology",
+    "title": "Exploring the potential of Oxford Nanopore Technologies sequencing for Mycobacterium tuberculosis sequencing",
+    "impact": "Evaluates the performance and limitations of newer nanopore sequencing chemistry for TB.",
+    "openAlex": "W4399394046"
+  }
+]
